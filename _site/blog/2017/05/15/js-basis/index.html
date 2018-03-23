@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>JS基础 | 胡静</title>
+<meta name="generator" content="Jekyll v3.5.2" />
+<meta property="og:title" content="JS基础" />
+<meta name="author" content="Dada" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+&quot; &quot;转化成字符串。 ####Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示&quot;无&quot;的对象，转为数值时为0；undefined是一个表示&quot;无&quot;的原始值，转为数值时为NaN。 null表示&quot;没有对象&quot;，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示&quot;缺少值&quot;，就是此处应该有一个值，但是还没有定义。 ####类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.prototype.toString.call(a) === &#39;[object String]&#39; jquery.type()：jQuery.type( null ) === &#39;null&#39;。利用Object.toString.call()方法 ####操作符 ==、!=：先转换再比较，null和undefined相等； ===、!==：仅比较而不转换，类型不同则不相等。 ####复合类型 函数：function； 数组：Array；push()、pop()、unshift()、shift()、sort(compare)，value1&lt;value2 返回-1表示正序,返回1表示倒序、indexOf()、lastIndexOf()、splice()； 类：Object，instanceof。" />
+<meta property="og:description" content="基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+&quot; &quot;转化成字符串。 ####Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示&quot;无&quot;的对象，转为数值时为0；undefined是一个表示&quot;无&quot;的原始值，转为数值时为NaN。 null表示&quot;没有对象&quot;，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示&quot;缺少值&quot;，就是此处应该有一个值，但是还没有定义。 ####类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.prototype.toString.call(a) === &#39;[object String]&#39; jquery.type()：jQuery.type( null ) === &#39;null&#39;。利用Object.toString.call()方法 ####操作符 ==、!=：先转换再比较，null和undefined相等； ===、!==：仅比较而不转换，类型不同则不相等。 ####复合类型 函数：function； 数组：Array；push()、pop()、unshift()、shift()、sort(compare)，value1&lt;value2 返回-1表示正序,返回1表示倒序、indexOf()、lastIndexOf()、splice()； 类：Object，instanceof。" />
+<link rel="canonical" href="http://localhost:4000/blog/2017/05/15/js-basis/" />
+<meta property="og:url" content="http://localhost:4000/blog/2017/05/15/js-basis/" />
+<meta property="og:site_name" content="胡静" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-15T07:00:00+08:00" />
+<script type="application/ld+json">
+{"description":"基本数据类型 Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined； Null类型只有一个值null，表示一个空指针，typeof返回object； Number.MIN_VALUE、Number.MAX_VALUE、Infinity、NaN(与任何值都不相等)；Number()、parseInt()、parseFloat()； String的值是不可变的、toString、+&quot; &quot;转化成字符串。 ####Undefined与null的区别 JavaScript的最初版本是这样区分的：null是一个表示&quot;无&quot;的对象，转为数值时为0；undefined是一个表示&quot;无&quot;的原始值，转为数值时为NaN。 null表示&quot;没有对象&quot;，该处不应该有值，用来表示函数企图返回一个不存在的对象。 undefined表示&quot;缺少值&quot;，就是此处应该有一个值，但是还没有定义。 ####类型判断 typeof：返回的类型都是字符串形式 instanceof：判断已知对象类型的方法 constructor：根据对象的constructor判断，在类继承时会出错 prototype：Object.prototype.toString.call(a) === &#39;[object String]&#39; jquery.type()：jQuery.type( null ) === &#39;null&#39;。利用Object.toString.call()方法 ####操作符 ==、!=：先转换再比较，null和undefined相等； ===、!==：仅比较而不转换，类型不同则不相等。 ####复合类型 函数：function； 数组：Array；push()、pop()、unshift()、shift()、sort(compare)，value1&lt;value2 返回-1表示正序,返回1表示倒序、indexOf()、lastIndexOf()、splice()； 类：Object，instanceof。","author":{"@type":"Person","name":"Dada"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2017/05/15/js-basis/","headline":"JS基础","dateModified":"2017-05-15T07:00:00+08:00","datePublished":"2017-05-15T07:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2017/05/15/js-basis/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="数据类型,内存管理,作用域" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="胡静" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.2.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/blog/categories/">Categories</a></li>
+                <li><a href="/blog/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">胡静</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/blog/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/blog/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">JS基础</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2017-05-15T07:00:00+08:00" datetime="2017-05-15T07:00:00+08:00">May 15, 2017 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">Dada</span>
+                                </span>
+                            </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/blog/categories/#JS" title="JS">
+            JS <span>2</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/blog/tags/#作用域" title="作用域">作用域 <span>1</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/blog/tags/#内存管理" title="内存管理">内存管理 <span>1</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/blog/tags/#数据类型" title="数据类型">数据类型 <span>1</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h1 id="heading-基本数据类型">基本数据类型</h1>
+<ul>
+  <li>Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined；</li>
+  <li>Null类型只有一个值null，表示一个空指针，typeof返回object；</li>
+  <li><code class="highlighter-rouge">Number.MIN_VALUE</code>、<code class="highlighter-rouge">Number.MAX_VALUE</code>、<code class="highlighter-rouge">Infinity</code>、<code class="highlighter-rouge">NaN</code>(与任何值都不相等)；<code class="highlighter-rouge">Number()</code>、<code class="highlighter-rouge">parseInt()</code>、<code class="highlighter-rouge">parseFloat()</code>；</li>
+  <li>String的值是不可变的、<code class="highlighter-rouge">toString</code>、<code class="highlighter-rouge">+" "</code>转化成字符串。
+####Undefined与null的区别</li>
+  <li>JavaScript的最初版本是这样区分的：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。</li>
+  <li>null表示"没有对象"，该处不应该有值，用来表示函数企图返回一个不存在的对象。</li>
+  <li>undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。
+####类型判断</li>
+  <li>typeof：返回的类型都是字符串形式</li>
+  <li>instanceof：判断已知对象类型的方法</li>
+  <li>constructor：根据对象的constructor判断，在类继承时会出错</li>
+  <li>prototype：<code class="highlighter-rouge">Object.prototype.toString.call(a) === '[object String]'</code></li>
+  <li>jquery.type()：<code class="highlighter-rouge">jQuery.type( null ) === 'null'</code>。利用Object.toString.call()方法
+####操作符</li>
+  <li><code class="highlighter-rouge">==</code>、<code class="highlighter-rouge">!=</code>：先转换再比较，null和undefined相等；</li>
+  <li><code class="highlighter-rouge">===</code>、<code class="highlighter-rouge">!==</code>：仅比较而不转换，类型不同则不相等。
+####复合类型</li>
+  <li>函数：function；</li>
+  <li>数组：Array；<code class="highlighter-rouge">push()</code>、<code class="highlighter-rouge">pop()</code>、<code class="highlighter-rouge">unshift()</code>、<code class="highlighter-rouge">shift()</code>、<code class="highlighter-rouge">sort(compare)</code>，<code class="highlighter-rouge">value1&lt;value2</code> 返回-1表示正序,返回1表示倒序、<code class="highlighter-rouge">indexOf()</code>、<code class="highlighter-rouge">lastIndexOf()</code>、<code class="highlighter-rouge">splice()</code>；</li>
+  <li>类：Object，<code class="highlighter-rouge">instanceof</code>。</li>
+</ul>
+
+<hr />
+<h1 id="heading-内存管理">内存管理</h1>
+<ul>
+  <li>原始值和引用值存储在内存中的位置分别为栈和堆。</li>
+  <li>原始值是存储在栈中的简单数据段，他们的值直接存储在变量访问的位置。</li>
+  <li>引用值是存储在堆中的对象。存储在栈中的值是一个指针，指向存储在堆中的实际对象。</li>
+  <li>栈的优势就是存取速度比堆要快，仅次于直接位于CPU中的寄存器，但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。
+    <blockquote>
+      <p><img src="/assets/images/2017/j1.jpg" alt="The IE Box" /></p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+<h1 id="heading-垃圾回收机制">垃圾回收机制</h1>
+<ul>
+  <li>标记清除：标记清除简单的来说就是给各个变量名打上 YES or NO的标签以供JS引擎进行处理（当然打什么标签自己理解即可）。在和执行上下文类似的的环境中当变量名称进入环境的时候，那么变量会被打上 YES。一般来说是绝对不会释放被打上 YES 标签的变量内存的，一旦变量在出了该环境时，变会被打上 NO 标签（和作用域貌似有点像），JS引擎会在一定时间间隔或者设置的时间来进行扫描，对NO标签的进行剔除以释放其内存。</li>
+  <li>引用计数：一般来说，引用计数的含义是跟踪记录每个值被引用的次数。当声明一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数便是1，如果同一个值又被赋给另一个变量，则该值的引用次数加1，相反，如果包含对这个值引用的变量又取得了另一个值，则这个值的引用次数减1。当这个值的引用次数为0时，说明没有办法访问到它了，因而可以将其占用的内存空间回收。</li>
+</ul>
+
+<hr />
+<h1 id="heading-作用域">作用域</h1>
+<blockquote>
+  <ul>
+    <li>声明提升：JavaScript引擎在执行的时候，会把所有变量的声明都提升到当前作用域的最前面；</li>
+    <li>函数作用域，无块级作用域；</li>
+    <li>作用域链</li>
+    <li>创建函数<img src="/assets/images/2017/j2.jpg" alt="The IE Box" /></li>
+    <li>调用函数<img src="/assets/images/2017/j3.jpg" alt="The IE Box" /></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.function add(num1,num2) {
+    var sum = num1 + num2;
+    return sum;
+}
+var total = add(5,10);
+</code></pre>
+</div>
+
+<blockquote>
+  <ul>
+    <li>With改变作用域链<img src="/assets/images/2017/j4.jpg" alt="The IE Box" /></li>
+  </ul>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>.function initUI(){
+    with(document){
+        var bd=body,
+        links=getElementsByTagName("a"),
+        i=0,
+        len=links.length;
+        while(i &lt; len){
+            update(links[i++]);
+        }
+        getElementById("btnInit").onclick=function(){
+            doSomething();
+        };
+}
+</code></pre>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/blog/2017/05/14/css-animation/" title=" '利用CSS实现动画效果'"> ← 利用CSS实现动画效果</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/blog/2017/05/24/js-object/" title="Next Post 'JS进阶之面向对象'">JS进阶之面向对象 → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="http://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                        <a class="ico-gmail" href="mailto:hujingdada@126.com" rel="me" target="_blank" title="email"></a>
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                    
+                        
+                            <a class="ico-github" href="https://github.com/HuJean" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Google Analytics Event tracking -->
+
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

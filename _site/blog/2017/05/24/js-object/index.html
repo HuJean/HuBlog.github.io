@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>JS进阶之面向对象 | 胡静</title>
+<meta name="generator" content="Jekyll v3.5.2" />
+<meta property="og:title" content="JS进阶之面向对象" />
+<meta name="author" content="Dada" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="创建对象 原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。" />
+<meta property="og:description" content="创建对象 原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。" />
+<link rel="canonical" href="http://localhost:4000/blog/2017/05/24/js-object/" />
+<meta property="og:url" content="http://localhost:4000/blog/2017/05/24/js-object/" />
+<meta property="og:site_name" content="胡静" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-24T02:23:03+08:00" />
+<script type="application/ld+json">
+{"description":"创建对象 原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。","author":{"@type":"Person","name":"Dada"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2017/05/24/js-object/","headline":"JS进阶之面向对象","dateModified":"2017-05-24T02:23:03+08:00","datePublished":"2017-05-24T02:23:03+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2017/05/24/js-object/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="面向对象" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="胡静" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.2.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/blog/categories/">Categories</a></li>
+                <li><a href="/blog/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">胡静</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/blog/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/blog/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">JS进阶之面向对象</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2017-05-24T02:23:03+08:00" datetime="2017-05-24T02:23:03+08:00">May 24, 2017 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">Dada</span>
+                                </span>
+                            </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/blog/categories/#JS" title="JS">
+            JS <span>2</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/blog/tags/#面向对象" title="面向对象">面向对象 <span>1</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h1 id="heading-创建对象">创建对象</h1>
+<ul>
+  <li>原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。
+    <blockquote>
+      <p><img src="/assets/images/2017/j21.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j22.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>工厂模式：解决代码重复的问题，cat1和cat2之间没有内在的联系，不能反映出它们是同一个原型对象的实例。
+    <blockquote>
+      <p><img src="/assets/images/2017/j23.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j24.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>构造函数模式：所谓"构造函数"，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。构造函数方法很好用，但是存在一个浪费内存的问题，相同的属性和方法每次都要生成。
+    <blockquote>
+      <p><img src="/assets/images/2017/j25.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j26.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j27.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j28.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>Prototype（混合）模式：Javascript规定，每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承，我们可以把那些不变的属性和方法，直接定义在prototype对象上。
+    <blockquote>
+      <p><img src="/assets/images/2017/j29.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j210.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+<h1 id="heading-继承">继承</h1>
+<ul>
+  <li>原型对象：最重要的作用就是把常量和方法独立到自身里，供给其它实例使用。
+    <blockquote>
+      <p><img src="/assets/images/2017/j211.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>原型链：JavaScritp引擎在访问对象的属性时，如果在对象本身中没有找到，则会去原型链中查找，如果找到，直接返回值，如果整个链都遍历且没有找到属性，则返回undefined。原型链一般实现为一个链表，这样就可以按照一定的顺序来查找。</li>
+  <li>继承实现</li>
+  <li>Js原型实现继承：引用类型的原型属性（数组、对象等）会被所有实例共享；在创建子类型的实例时，不能向父类的构造函数传递参数。
+    <blockquote>
+      <p><img src="/assets/images/2017/j212.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>构造函数实现继承
+    <blockquote>
+      <p><img src="/assets/images/2017/j214.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>call , apply实现组合继承
+    <blockquote>
+      <p><img src="/assets/images/2017/j217.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>寄生式继承
+    <blockquote>
+      <p><img src="/assets/images/2017/j221.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+  <li>寄生组合继承
+    <blockquote>
+      <p><img src="/assets/images/2017/j223.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+</ul>
+
+<hr />
+<h1 id="heading-call和apply详解">call和apply详解</h1>
+<ul>
+  <li>call和apply都可以实现继承，唯一的一点参数不同，func.call(func1,var1,var2,var3)对应的apply写法为：func.apply(func1,[var1,var2,var3])。</li>
+  <li>call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
+    <blockquote>
+      <p><img src="/assets/images/2017/j224.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j225.jpg" alt="A bowl of bananas" />
+<img src="/assets/images/2017/j226.jpg" alt="A bowl of bananas" /></p>
+    </blockquote>
+  </li>
+</ul>
+
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/blog/2017/05/15/js-basis/" title=" 'JS基础'"> ← JS基础</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/blog/2017/05/25/quick-kramdown-demo/" title="Next Post 'Quick kramdown demo'">Quick kramdown demo → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="http://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                        <a class="ico-gmail" href="mailto:hujingdada@126.com" rel="me" target="_blank" title="email"></a>
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                    
+                        
+                            <a class="ico-github" href="https://github.com/HuJean" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Google Analytics Event tracking -->
+
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

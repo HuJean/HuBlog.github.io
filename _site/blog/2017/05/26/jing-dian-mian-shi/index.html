@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>经典面试 | 胡静</title>
+<meta name="generator" content="Jekyll v3.5.2" />
+<meta property="og:title" content="经典面试" />
+<meta name="author" content="Dada" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="####RegExp var expression = /pattern /flags 特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式； 匹配模式（pattern）" />
+<meta property="og:description" content="####RegExp var expression = /pattern /flags 特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式； 匹配模式（pattern）" />
+<link rel="canonical" href="http://localhost:4000/blog/2017/05/26/jing-dian-mian-shi/" />
+<meta property="og:url" content="http://localhost:4000/blog/2017/05/26/jing-dian-mian-shi/" />
+<meta property="og:site_name" content="胡静" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-26T01:37:46+08:00" />
+<script type="application/ld+json">
+{"description":"####RegExp var expression = /pattern /flags 特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式； 匹配模式（pattern）","author":{"@type":"Person","name":"Dada"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2017/05/26/jing-dian-mian-shi/","headline":"经典面试","dateModified":"2017-05-26T01:37:46+08:00","datePublished":"2017-05-26T01:37:46+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2017/05/26/jing-dian-mian-shi/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="胡静" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.2.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+
+</head>
+
+<body>
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/blog/categories/">Categories</a></li>
+                <li><a href="/blog/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">胡静</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/blog/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/blog/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">经典面试</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2017-05-26T01:37:46+08:00" datetime="2017-05-26T01:37:46+08:00">May 26, 2017 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name">Dada</span>
+                                </span>
+                            </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <p>####RegExp</p>
+<ul>
+  <li><code class="highlighter-rouge">var expression = /pattern /flags</code></li>
+  <li>特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；</li>
+  <li>匹配模式（pattern）
+    <blockquote>
+      <p><img src="/assets/images/2017/mian1.jpg" alt="" /></p>
+    </blockquote>
+  </li>
+  <li>去掉空格、回车、制表符</li>
+  <li><code class="highlighter-rouge">str.replace(/(^\s*)|(\s*$)/g, "")</code>：<code class="highlighter-rouge">(\s*)</code>表示连续空格的字符串、<code class="highlighter-rouge">^</code>表示以开始、<code class="highlighter-rouge">$</code>表示以结尾；</li>
+  <li>使用<code class="highlighter-rouge">jquery</code>的<code class="highlighter-rouge">$.trim()</code>方法</li>
+</ul>
+
+<hr />
+<p>####JQuery</p>
+<ul>
+  <li>Ready</li>
+  <li>插件</li>
+</ul>
+
+<hr />
+<p>####跨域处理
+####HTTP请求、状态码
+####性能优化
+####JSON
+####兼容性问题</p>
+
+<hr />
+<p>####图片延迟加载</p>
+<ul>
+  <li>原理：页面可见区域以下的图片先不加载，等到用户向下滚动到图片位置时，再进行加载。</li>
+  <li>
+    <p>Js原生方法</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  &lt;script&gt;
+      var imgs = document.getElementsByTagName('img');
+      // 获取视口高度与滚动条的偏移量
+      function lazyload(){
+          var scrollTop = window.pageYOffset 
+              || document.documentElement.scrollTop 
+              || document.body.scrollTop;
+          var viewportSize = window.innerHeight 
+              || document.documentElement.clientHeight 
+              || document.body.clientHeight;
+          for(var i=0; i&lt;imgs.length; i++) {
+              var x =scrollTop+viewportSize-imgs[i].offsetTop;
+              if(x&gt;0){
+                  imgs[i].src = imgs[i].getAttribute('loadpic'); }}}
+          setInterval(lazyload,1000);
+  &lt;/script&gt;
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>jQuery插件lazyload</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  $("img.lazy").lazyload({
+      placeholder : "img/grey.gif", // placeholder值为某一图片路径.此图片用来占据将要加载的图片的位置,待图片加载时,占位图则会隐藏
+      effect: "fadeIn", // 载入使用何种效show(直接显示),fadeIn(淡入),slideDown(下拉)等,常用fadeIn
+      threshold: 200, // threshold,值为数字,代表页面高度.如设置为200,表示滚动条在离目标位置还有200的高度时就开始加载图片,可以做到不让用户察觉
+      event: 'click',  // 事件触发时才加载，值click(点击),mouseover(鼠标划过),sporty(运动的),foobar(…).可以实现鼠标莫过或点击图片才开始加载
+      container: $("#container"),  // 对某容器中的图片实现效果,值为某容器.lazyload默认在拉动浏览器滚动条时生效,这个参数可以让你在拉动某DIV的滚动条时依次加载其中的图片
+      failurelimit : 10 //值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
+  });
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<hr />
+<p>####二维码扫描后跳转</p>
+<ul>
+  <li>微信登录的二维码实际上是将一个URL转换成二维码的形式，而通过微信客户端扫码后，无非就是打开了这个url, 我捕捉到的微信二维码的url为<code class="highlighter-rouge">https://login.weixin.qq.com/l/YdmTu30I5A==</code> ，这个url里的<code class="highlighter-rouge">YdmTu30I5A==</code>代表的是本次会话的唯一ID, 这个有点儿类似浏览器里的session id，通过这个ID,微信就能定向将确认结果反馈到网页上。</li>
+  <li>服务器收到了登录信息和sessionID后就可以确认两件事：一是用来确认登录的客户端的用户是验证过的；二是通过session ID服务器知道将反馈结果推送到哪个网页。</li>
+  <li>web实时推送技术，使用推送技术可以节约服务器端和客户端的资源，可以稳定地推送和接收任何消息。</li>
+</ul>
+
+<hr />
+<p>####前端路由</p>
+<ul>
+  <li>路由是根据不同的 url 地址展示不同的内容或页面，前端路由就是把不同路由对应不同的内容或页面的任务交给前端来做，之前是通过服务端根据 url 的不同返回不同的页面实现的。</li>
+  <li>优点：用户体验好，不需要每次都从服务器全部获取，快速展现给用户</li>
+  <li>缺点：使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存；单页面无法记住之前滚动的位置，无法在前进，后退的时候记住滚动的位置。</li>
+  <li>原理：当 url 的 hash 发生变化时，触发 hashchange 注册的回调，回调中去进行不同的操作，进行不同的内容的展示。</li>
+  <li>后端路由：每跳转到不同的URL，都是重新访问服务端，然后服务端返回页面，页面也可以是服务端获取数据，然后和模板组合，返回HTML，也可以是直接返回模板HTML，然后由前端JS再去请求数据，使用前端模板和数据进行组合，生成想要的HTML。</li>
+</ul>
+
+<hr />
+<p>####函数声明</p>
+<ul>
+  <li>var aaa=function(){…}：var 方式定义的函数，不能先调用函数，后声明，只能先声明函数，然后调用。</li>
+  <li>function aaa(){…}：function方式定义函数可以先调用，后声明。</li>
+</ul>
+
+<hr />
+<p>####手写盒子模型中</p>
+<ul>
+  <li>获取盒子内子节点的class样式，盒子内节点的类型不可知<img src="/assets/images/2017/mian2.jpg" alt="" /></li>
+</ul>
+
+<hr />
+<p>####JS底层实现原理</p>
+<ul>
+  <li>ECMAScript（核心）：JavaScript 语言基础；规定了 JavaScript 脚本的核心语法，如 数据类型、关键字、保留字、运算符、对象和语句等，它不属于任何浏览器。</li>
+  <li>DOM（文档对象模型）：规定了访问HTML和XML的接口；“ Document Object Model ”的缩写，简称“ 文件对象模型 ”，由W3C制定规范。定义了 JavaScript 操作 HTML 文档的接口，提供了访问 HTML 文档（如body、form、div、textarea等）的途径以及操作方法。</li>
+  <li>BOM（浏览器对象模型）：提供了独立于内容而在浏览器窗口之间进行交互的对象和方法。Browser Object Model ”的缩写，简称“ 浏览器对象模型 ”。BOM 定义了 JavaScript 操作浏览器的接口，提供了访问某些功能（如浏览器窗口大小、版本信息、浏览历史记录等）的途径以及操作方法。</li>
+</ul>
+
+<hr />
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/blog/2017/05/26/qian-duan-kuang-jia/" title=" '前端框架'"> ← 前端框架</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/blog/2017/05/26/es6xin-te-xing/" title="Next Post 'ES6新特性'">ES6新特性 → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="http://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                        <a class="ico-gmail" href="mailto:hujingdada@126.com" rel="me" target="_blank" title="email"></a>
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                    
+                        
+                            <a class="ico-github" href="https://github.com/HuJean" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Google Analytics Event tracking -->
+
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+---
+layout: post
+title: JS基础
+date: '2017-05-15 07:00:00'
+categories: [JS]
+tags: [数据类型,内存管理,作用域]
+---
+
+# 基本数据类型
+* Undefined类型只有一个值undefined，当变量被声明但未被赋值时为undefined，typeof未初始化或者未声明的变量都返回undefined；
+* Null类型只有一个值null，表示一个空指针，typeof返回object；
+* `Number.MIN_VALUE`、`Number.MAX_VALUE`、`Infinity`、`NaN`(与任何值都不相等)；`Number()`、`parseInt()`、`parseFloat()`；
+* String的值是不可变的、`toString`、`+" "`转化成字符串。
+####Undefined与null的区别
+* JavaScript的最初版本是这样区分的：null是一个表示"无"的对象，转为数值时为0；undefined是一个表示"无"的原始值，转为数值时为NaN。
+* null表示"没有对象"，该处不应该有值，用来表示函数企图返回一个不存在的对象。
+* undefined表示"缺少值"，就是此处应该有一个值，但是还没有定义。
+####类型判断
+* typeof：返回的类型都是字符串形式
+* instanceof：判断已知对象类型的方法
+* constructor：根据对象的constructor判断，在类继承时会出错
+* prototype：`Object.prototype.toString.call(a) === '[object String]'`
+* jquery.type()：`jQuery.type( null ) === 'null'`。利用Object.toString.call()方法
+####操作符
+* `==`、`!=`：先转换再比较，null和undefined相等；
+* `===`、`!==`：仅比较而不转换，类型不同则不相等。
+####复合类型
+* 函数：function；
+* 数组：Array；`push()`、`pop()`、`unshift()`、`shift()`、`sort(compare)`，`value1<value2` 返回-1表示正序,返回1表示倒序、`indexOf()`、`lastIndexOf()`、`splice()`；
+* 类：Object，`instanceof`。
+
+---
+# 内存管理
+* 原始值和引用值存储在内存中的位置分别为栈和堆。
+* 原始值是存储在栈中的简单数据段，他们的值直接存储在变量访问的位置。
+* 引用值是存储在堆中的对象。存储在栈中的值是一个指针，指向存储在堆中的实际对象。
+* 栈的优势就是存取速度比堆要快，仅次于直接位于CPU中的寄存器，但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。
+> ![The IE Box](/assets/images/2017/j1.jpg)
+
+---
+# 垃圾回收机制
+* 标记清除：标记清除简单的来说就是给各个变量名打上 YES or NO的标签以供JS引擎进行处理（当然打什么标签自己理解即可）。在和执行上下文类似的的环境中当变量名称进入环境的时候，那么变量会被打上 YES。一般来说是绝对不会释放被打上 YES 标签的变量内存的，一旦变量在出了该环境时，变会被打上 NO 标签（和作用域貌似有点像），JS引擎会在一定时间间隔或者设置的时间来进行扫描，对NO标签的进行剔除以释放其内存。
+* 引用计数：一般来说，引用计数的含义是跟踪记录每个值被引用的次数。当声明一个变量并将一个引用类型值赋给该变量时，则这个值的引用次数便是1，如果同一个值又被赋给另一个变量，则该值的引用次数加1，相反，如果包含对这个值引用的变量又取得了另一个值，则这个值的引用次数减1。当这个值的引用次数为0时，说明没有办法访问到它了，因而可以将其占用的内存空间回收。
+
+---
+# 作用域
+> * 声明提升：JavaScript引擎在执行的时候，会把所有变量的声明都提升到当前作用域的最前面；
+> * 函数作用域，无块级作用域；
+> * 作用域链
+>  * 创建函数![The IE Box](/assets/images/2017/j2.jpg)
+>  * 调用函数![The IE Box](/assets/images/2017/j3.jpg)
+
+    .function add(num1,num2) {
+        var sum = num1 + num2;
+        return sum;
+    }
+    var total = add(5,10);
+
+> * With改变作用域链![The IE Box](/assets/images/2017/j4.jpg)
+
+    .function initUI(){
+        with(document){
+            var bd=body,
+            links=getElementsByTagName("a"),
+            i=0,
+            len=links.length;
+            while(i < len){
+                update(links[i++]);
+            }
+            getElementById("btnInit").onclick=function(){
+                doSomething();
+            };
+    }
+

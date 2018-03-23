@@ -1,0 +1,67 @@
+---
+layout: post
+title: 利用CSS实现简单画图
+date: '2017-05-13 07:00:00'
+categories: [CSS]
+tags: [画图]
+---
+
+# 优劣
+利用css画图形，是个有利有弊的写法，好处是不用画图，且节省了一些流量，坏处是要写长串的css样式，而且有可能流量并没有减少，用与否视情况而定，个人选择。
+
+---
+### 三角形
+*  利用了相邻两个边框的接壤处分配原则
+*  如果没有宽度和高度的话，其实应该是四个三角形接成的矩形 
+  
+&emsp;&emsp;![css-border](/assets/images/2017/d_1.jpg)
+  
+#### &emsp;&emsp;具体代码
+    .triangle-up { 
+        width: 0; 
+        height: 0; 
+        border-left: 50px solid transparent; 
+        border-right: 50px solid transparent;
+        border-bottom: 100px solid #669; 
+    }
+
+---
+### 圆形
+* 利用了css3.0的圆角属性 border-radius 适当的调整大小会有不同的效果
+
+  ![A bowl of bananas](/assets/images/2017/d_2.jpg)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  ![A bowl of bananas](/assets/images/2017/d_3.jpg)
+
+#### &emsp;&emsp;具体代码
+    .circle {
+        width: 100px; 
+        height: 100px; 
+        background: #669; 
+        -moz-border-radius: 50px; 
+        -webkit-border-radius: 50px; 
+        border-radius: 50px; 
+    }
+    .circle-circle { 
+        width: 100px; 
+        height: 100px; 
+        border:20px solid #669;
+        background: #fff; 
+        -moz-border-radius: 100px; 
+        -webkit-border-radius: 100px; 
+        border-radius: 100px; 
+    }
+
+---
+### 平行四边形
+* 扭曲skew()函数能够让元素倾斜显示。它可以将一个对象以其中心位置围绕着X轴和Y轴按照一定的角度倾斜。
+
+#### &emsp;&emsp;具体代码
+    .parallelogram { 
+        width: 150px; 
+        height: 100px; 
+        -webkit-transform: skew(-20deg); 
+        -moz-transform: skew(-20deg); 
+        -o-transform: skew(-20deg); 
+        background: #669;
+        margin-left:20px; 
+    }

@@ -1,0 +1,20 @@
+---
+layout: post
+title: JS--BOM
+date: '2017-05-25 06:45:51'
+---
+
+####基本概念
+* BOM的意思是浏览器对象模型（Browser Object Model），就是JavaScript中的window对象。
+* window（BOM）内包含document、history、location、navigator、screen等对象，其中document就是DOM！
+>![](/assets/images/2017/b1.jpg)
+
+####window对象
+* 浏览器在JavaScript中的一个实例。对window对象属性的操作可以获取或操作网页标签的状态、大小、位置等。所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。
+* Screen 对象包含有关客户端显示屏幕的信息。screen对象可以理解成显示器在JavaScript中的一个实例。
+* Navigator 对象包含有关浏览器的信息。navigator对象可以理解成当前浏览器（不是网页标签）在JavaScript中的一个实例。
+* Location 对象包含有关当前 URL 的信息。location对象可以理解成当前网页网址在JavaScript中的一个实例。
+* History 对象包含用户（在浏览器窗口中）访问过的 URL。history对象可以理解成浏览器历史记录在JavaScript中的一个实例。
+* 每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象使我们可以从脚本中对 HTML 页面中的所有元素进行访问。document对象可以理解为HTML文件在JavaScript中的一个实例。
+
+---
