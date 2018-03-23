@@ -30,8 +30,8 @@ tags: [画图]
 ### 圆形
 * 利用了css3.0的圆角属性 border-radius 适当的调整大小会有不同的效果
 
-  ![A bowl of bananas](/assets/images/2017/d_2.jpg)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-  ![A bowl of bananas](/assets/images/2017/d_3.jpg)
+  ![](/assets/images/2017/d_2.jpg)&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+  ![](/assets/images/2017/d_3.jpg)
 
 #### &emsp;&emsp;具体代码
     .circle {

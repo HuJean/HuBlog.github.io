@@ -35,11 +35,11 @@ tags: [concept]
  * 权重：内联样式表（标签内部）>嵌入样式表（当前文件中）>外部样式表（外部文件中），!important>id>class>tag，important比内联优先级高。
  * 优先级就近原则，同权重情况下样式定义最近者为准，载入样式以最后载入的定位为准。
 
-    ![The IE Box](/assets/images/2017/priority.JPG)
+    ![css priority](/assets/images/2017/priority.JPG)
 
 ---
 # 伪类及伪元素
  * 伪类：用于向某些选择器添加特殊的效果
  * 伪元素：用于将特殊的效果添加到某些选择器
 
-    ![The IE Box](/assets/images/2017/class_ele.jpg)
+    ![css](/assets/images/2017/class_ele.jpg)
