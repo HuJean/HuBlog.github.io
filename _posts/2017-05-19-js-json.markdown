@@ -1,0 +1,34 @@
+---
+layout: post
+title: JS基础之JSON
+date: '2017-05-19 07:00:00'
+categories: [JS]
+tags: [JOSN]
+---
+
+# 为什么使用JSON而不是XML
+  * `JavaScript Object Notation`，意思是JavaScript对象表示法，它是一种基于文本，独立于语言的轻量级数据交换格式。
+  * `XML`也是一种数据交换格式，虽然可以作为跨平台的数据交换格式，但是在JS中处理XML非常不方便，同时XML标记比数据多，增加了交换产生的流量，而JSON没有附加的任何标记，在JS中可作为对象处理，所以我们更倾向于选择JSON来交换数据。
+
+# JSON：JavaScript Object Notation，数据交换格式
+  * Json字符串：符合json格式要求的js字符串；
+    `var jsonStr = '{"name": "hujing", "age": 29}'`
+  * Json对象：指符合json格式要求的js对象，可以包含简单值、对象以及数组；
+    `var jsonObj = {"name": "hujing","age": 29}`
+
+---
+# JSON字符串转换成JSON对象（解析）
+  * `eval()`函数：解析、解释并返回对象和数组，但是效率较低且存在风险，可能会用来执行一些恶意代码；
+  * `JSON.parse(jsonStr)`；
+
+# JSON对象转换成JSON字符串（序列化）
+  * `jsonObj.toString()`;
+  * `JSON.stringify(jsonObj)`;
+
+# 序列化顺序
+  * 如果存在`toJSON()`方法且能通过它取得有效的值，则调用该方法。否则，返回对象本身；
+  * 如果提供了第二个参数，应用这个函数过滤器。传入过滤器的值是1返回的结果；
+  * 对2返回的每个值进行相应的序列化；
+  * 如果提供了第三个参数，则执行相应的格式化。
+
+

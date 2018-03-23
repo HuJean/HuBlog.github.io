@@ -1,0 +1,61 @@
+---
+layout: post
+title: JS进阶之ES6
+date: '2017-05-29 07:00:00'
+categories: [JS]
+tags: [ES6]
+---
+
+# ECMAScript 2015（ES6）的十大特征
+  * 默认参数：`var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}`
+  * 模板对象：`var name = 'Your name is ${first} ${last}.' `; 反引号
+  * 多行字符串：反引号
+  * 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。
+  * 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。
+
+    ![](/assets/images/2017/es1.jpg)
+
+  * 箭头函数：箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定，完全修复了this的指向，this总是指向词法作用域。
+
+---
+  * Promises
+  
+    ![](/assets/images/2017/es2.jpg)
+
+   * 异步方法调用中，往往会出现回调函数一环扣一环的情况。这种情况导致了回调金字塔问题的出现。不仅代码写起来费劲又不美观，而且问题复杂的时候，阅读代码的人也难以理解。
+   * 三种状态：Fulfilled成功、Rejected失败、Pending为 Promise 对象实例创建时候的初始状态，待执行；
+
+     ![](/assets/images/2017/es3.jpg)
+
+   * ajax操作Promise化，可以实现链式使用。避免了传统的只能使用回调的麻烦。
+   * Promise实现异步任务顺序执行
+   * Promise实现异步任务并行执行
+   * 顺序执行效率低，并行执行但是需要所有的数据加载完成才能开始渲染，并行加载顺序渲染。
+     
+     ![](/assets/images/2017/es4.jpg)
+
+     ![](/assets/images/2017/es5.jpg)
+ 
+   * 第一步，加载了story.json的数据；第二步，把数据转换成JSON格式；第三步，把JSON数据打印出来。
+    
+     ![](/assets/images/2017/es6.jpg)
+
+     ![](/assets/images/2017/es7.jpg)
+ 
+     ![](/assets/images/2017/es8.jpg)
+ 
+---
+  * 块级作用域
+    * let声明的变量只在块级有效。let没有‘变量提升’的特性，而却有‘暂时性死区（temporal dead zone）’的特性。
+    * const命令与let命令一样，声明的变量，其作用域都是块级。所以const遵循的规则与let相差无二，只是，const是用来声明恒定变量的。且用const声明恒定变量，声明的同时就必须赋值，否则会报错。
+  * 类
+    * 类的所有实例共享一个原型对象。
+    * 不存在变量提升
+    * 私有方法添加下划线
+    * 类的方法内部如果含有this，它默认指向类的实例
+    * 继承extends，子类必须在constructor方法中调用super方法，否则新建实例时会报错。
+  * 模块
+    * JS是解释型语言，边加载边运行，后续脚本运行时，这些脚本所依赖的一切必须已经加载完毕；JS脚本加载时会阻塞浏览器，如果加载的JS很多很大，浏览器会卡住，带来很差的用户体验；通过调整script标签顺序可以修改JS模块之间的依赖，然而当模块很多时，这种做法就不可用了。
+    * AMD模块（RequireJS）、CommonJS模块（Node.js）、CMD(SeaJS)
+    * 导出export
+    * 导入import
