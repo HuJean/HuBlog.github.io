@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.5.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-23T19:15:38+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-26T14:07:31+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var expression = /pattern /flags&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;匹配模式（pattern）&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/mian1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/mian1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;去掉空格、回车、制表符&lt;/li&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;str.replace(/(^\s*)|(\s*$)/g, &quot;&quot;)&lt;/code&gt;：&lt;code class=&quot;highlighter-rouge&quot;&gt;(\s*)&lt;/code&gt;表示连续空格的字符串、&lt;code class=&quot;highlighter-rouge&quot;&gt;^&lt;/code&gt;表示以开始、&lt;code class=&quot;highlighter-rouge&quot;&gt;$&lt;/code&gt;表示以结尾；&lt;/li&gt;
@@ -100,7 +100,7 @@
 &lt;hr /&gt;
 &lt;h1 id=&quot;heading-手写盒子模型中&quot;&gt;手写盒子模型中&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;获取盒子内子节点的class样式，盒子内节点的类型不可知&lt;img src=&quot;/assets/images/2017/mian2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;获取盒子内子节点的class样式，盒子内节点的类型不可知&lt;img src=&quot;http://localhost:4000/assets/images/2017/mian2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -118,7 +118,7 @@
   &lt;li&gt;
     &lt;p&gt;增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;箭头函数：箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定，完全修复了this的指向，this总是指向词法作用域。&lt;/li&gt;
 &lt;/ul&gt;
@@ -128,13 +128,13 @@
   &lt;li&gt;
     &lt;p&gt;Promises&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;异步方法调用中，往往会出现回调函数一环扣一环的情况。这种情况导致了回调金字塔问题的出现。不仅代码写起来费劲又不美观，而且问题复杂的时候，阅读代码的人也难以理解。&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;三种状态：Fulfilled成功、Rejected失败、Pending为 Promise 对象实例创建时候的初始状态，待执行；&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;ajax操作Promise化，可以实现链式使用。避免了传统的只能使用回调的麻烦。&lt;/li&gt;
   &lt;li&gt;Promise实现异步任务顺序执行&lt;/li&gt;
@@ -142,18 +142,18 @@
   &lt;li&gt;
     &lt;p&gt;顺序执行效率低，并行执行但是需要所有的数据加载完成才能开始渲染，并行加载顺序渲染。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;第一步，加载了story.json的数据；第二步，把数据转换成JSON格式；第三步，把JSON数据打印出来。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/es8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/es8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -241,7 +241,7 @@
   &lt;li&gt;
     &lt;p&gt;View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/M1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/M1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -255,7 +255,7 @@
       &lt;li&gt;
         &lt;p&gt;Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain Model是不一样的。&lt;/p&gt;
 
-        &lt;p&gt;&lt;img src=&quot;/assets/images/2017/M2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/M2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -271,7 +271,7 @@
       &lt;li&gt;
         &lt;p&gt;Presenter中除了业务逻辑以外，还有大量的View-&amp;gt;Model，Model-&amp;gt;View的手动同步逻辑，造成Presenter比较笨重，维护起来会比较困难。&lt;/p&gt;
 
-        &lt;p&gt;&lt;img src=&quot;/assets/images/2017/M3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/M3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -288,7 +288,7 @@
       &lt;li&gt;
         &lt;p&gt;过于简单的图形界面不适用，或说牛刀杀鸡。对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高。数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的。&lt;/p&gt;
 
-        &lt;p&gt;&lt;img src=&quot;/assets/images/2017/M4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/M4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
       &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
@@ -313,9 +313,9 @@
   &lt;li&gt;
     &lt;p&gt;将 HTML 代码（View 层）和 JS 代码（Controller 层）混杂在了一起，UI 与逻辑代码混杂在一起，阅读起来会非常吃力。一旦业务复杂起来，或者多人维护的情况下，几乎会失控。而且如果需要拼接的 HTML 代码里有很多引号的话（比如有大量的 href 属性，src 属性），那么就非常容易出错了（这样干过的应该深有体会）。这样一来，如果前端需要改 HTML 代码，只需要改模板即可。这样做的优点很明显，前端 UI和逻辑代码不再混杂，阅读体验良好，改动起来也方便了许多。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/M5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/M5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/m6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/m6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Model" /><summary type="html">工作模式 图形界面的应用程序提供给用户可视化的操作界面，这个界面提供给数据和信息。 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。 View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。</summary></entry><entry><title type="html">前端性能优化</title><link href="http://localhost:4000/blog/2017/05/26/front-performance/" rel="alternate" type="text/html" title="前端性能优化" /><published>2017-05-26T07:00:00+08:00</published><updated>2017-05-26T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/26/front-performance</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/26/front-performance/">&lt;h1 id=&quot;heading-基本概念&quot;&gt;基本概念&lt;/h1&gt;
 &lt;ul&gt;
@@ -493,7 +493,7 @@
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/li&gt;
-  &lt;li&gt;命名冲突、文件依赖&lt;img src=&quot;/assets/images/2017/k1.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/k2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+  &lt;li&gt;命名冲突、文件依赖&lt;img src=&quot;http://localhost:4000/assets/images/2017/k1.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/k2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -523,9 +523,9 @@
   &lt;li&gt;
     &lt;p&gt;栅格系统：将一个页面可以拆分成多个区块来理解，而正是这些区块共同构成了真个页面的布局。根据不同的屏幕尺寸情况，调整这些区块的排版，就可以实现响应式设计。另外，屏幕宽度较大的时候，区块倾向于水平分布，而屏幕宽度较小的时候，区块倾向于竖直堆叠。 栅格样式库一般是这样做的：将页面划分为若干等宽的列（column），然后推荐你通过等宽列来创建响应式的页面区块。 Bootstrap把它的栅格放在CSS这个分类下，并称它为Gird system。默认分为12列。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/k3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/k3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Framework" /><summary type="html">Node.js 并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。 nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。 Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。 Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。</summary></entry><entry><title type="html">HTTP状态码</title><link href="http://localhost:4000/blog/2017/05/23/http-state/" rel="alternate" type="text/html" title="HTTP状态码" /><published>2017-05-23T07:00:00+08:00</published><updated>2017-05-23T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/23/http-state</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/23/http-state/">&lt;p&gt;&lt;img src=&quot;/assets/images/2017/http.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Framework" /><summary type="html">Node.js 并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。 nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。 Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。 Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。</summary></entry><entry><title type="html">HTTP状态码</title><link href="http://localhost:4000/blog/2017/05/23/http-state/" rel="alternate" type="text/html" title="HTTP状态码" /><published>2017-05-23T07:00:00+08:00</published><updated>2017-05-23T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/23/http-state</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/23/http-state/">&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/http.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;heading-1&quot;&gt;1**&lt;/h1&gt;
 &lt;ul&gt;
@@ -596,13 +596,13 @@
 
 &lt;h1 id=&quot;heading-请求报文&quot;&gt;请求报文&lt;/h1&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](/assets/images/2017/HTTP1.jpg)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](http://localhost:4000/assets/images/2017/HTTP1.jpg)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;h1 id=&quot;heading-响应报文&quot;&gt;响应报文&lt;/h1&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](/assets/images/2017/HTTP2.jpg)
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](http://localhost:4000/assets/images/2017/HTTP2.jpg)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
@@ -621,7 +621,7 @@
   &lt;li&gt;
     &lt;p&gt;Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/HTTP3.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/HTTP4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/HTTP3.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/HTTP4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -630,7 +630,7 @@
   &lt;li&gt;
     &lt;p&gt;如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。　当设置成keep-alive，如上面所示的百度的http头部信息所示，就会建立一条持久化的连接。不需要每次都建立连接，再中断。&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/HTTP5.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/HTTP6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/HTTP5.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/HTTP6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -710,7 +710,7 @@
 &lt;hr /&gt;
 &lt;h1 id=&quot;heading-html5新特性&quot;&gt;HTML5新特性&lt;/h1&gt;
 
-&lt;p&gt;&lt;img src=&quot;/assets/images/2017/h1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;用webWorker来处理一些比较耗时的计算
@@ -793,9 +793,9 @@ FALLBACK:
   &lt;li&gt;
     &lt;p&gt;localstorge另一个浏览上下文里被添加、修改或删除时，它会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;webSocket：ajax轮询 需要服务器有很快的处理速度和资源。（速度）long poll 需要有很高的并发，也就是说同时接待客户的能力。（场地大小）就变成了这样，只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。（在程序设计中，这种设计叫做回调，即：你有信息了再来通知我，而不是我傻乎乎的每次跑来问你 ）&lt;/li&gt;
   &lt;li&gt;如何兼容低浏览器？(阿里) Adobe Flash Socket 、ActiveX HTMLFile (IE) 、基于 multipart 编码发送 XHR 、基于长轮询的 XHR&lt;/li&gt;
@@ -807,7 +807,7 @@ FALLBACK:
   &lt;li&gt;
     &lt;p&gt;通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -819,11 +819,11 @@ FALLBACK:
   &lt;li&gt;
     &lt;p&gt;纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -854,7 +854,7 @@ FALLBACK:
 &lt;ul&gt;
   &lt;li&gt;canvas：元素本身并没有绘制能力（它仅仅是图形的容器），必须使用脚本来完成实际的绘图任务。Canvas提供的功能更原始，适合像素处理，动态渲染和大数据量绘制。&lt;/li&gt;
   &lt;li&gt;SVG可缩放矢量图形（Scalable Vector Graphics）：基于可扩展标记语言（XML），使用XML文档描述来绘图。SVG功能更完善，适合静态图片展示，高保真文档查看和打印的应用场景。
- &lt;img src=&quot;/assets/images/2017/h8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+ &lt;img src=&quot;http://localhost:4000/assets/images/2017/h8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
@@ -866,14 +866,14 @@ FALLBACK:
   &lt;li&gt;
     &lt;p&gt;meta方法&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;清理form表单的临时缓存：&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body onLoad=&quot;javascript:document.yourFormName.reset()&quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;jquery ajax清除浏览器缓存&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;用ajax请求服务器最新文件，并加上请求头&lt;code class=&quot;highlighter-rouge&quot;&gt;If-Modified-Since&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control&lt;/code&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h10.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/h11.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h10.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;http://localhost:4000/assets/images/2017/h11.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;直接用cache:false&lt;/li&gt;
   &lt;li&gt;用随机数：URL 参数后加上 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;?ran=&quot; + Math.random()&lt;/code&gt;;&lt;/li&gt;

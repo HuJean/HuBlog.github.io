@@ -40,7 +40,7 @@ tags: [数据类型,内存管理,作用域]
   * 引用值是存储在堆中的对象。存储在栈中的值是一个指针，指向存储在堆中的实际对象。
   * 栈的优势就是存取速度比堆要快，仅次于直接位于CPU中的寄存器，但缺点是，存在栈中的数据大小与生存期必须是确定的，缺乏灵活性。堆的优势是可以动态地分配内存大小，生存期也不必事先告诉编译器，垃圾收集器会自动地收走这些不再使用的数据，但是缺点是由于在运行时动态分配内存，所以存取速度较慢。
   
-    ![The IE Box](/assets/images/2017/j1.jpg)
+    ![The IE Box]({{site.url}}/assets/images/2017/j1.jpg)
 
 ---
 # 垃圾回收机制
@@ -54,11 +54,11 @@ tags: [数据类型,内存管理,作用域]
   * 作用域链
     * 创建函数
 
-      ![The IE Box](/assets/images/2017/j2.jpg)
+      ![The IE Box]({{site.url}}/assets/images/2017/j2.jpg)
 
     * 调用函数
 
-      ![The IE Box](/assets/images/2017/j3.jpg)
+      ![The IE Box]({{site.url}}/assets/images/2017/j3.jpg)
 
     * 具体代码
     
@@ -71,7 +71,7 @@ tags: [数据类型,内存管理,作用域]
     ``` 
   * With改变作用域链
 
-    ![The IE Box](/assets/images/2017/j4.jpg)
+    ![The IE Box]({{site.url}}/assets/images/2017/j4.jpg)
 
     * 具体代码
 

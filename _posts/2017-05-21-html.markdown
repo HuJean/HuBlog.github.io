@@ -44,7 +44,7 @@ tags: [Html]
 ---
 # HTML5新特性
 
-   ![](/assets/images/2017/h1.jpg)
+   ![]({{site.url}}/assets/images/2017/h1.jpg)
 
   * 用webWorker来处理一些比较耗时的计算
     * postMessage(data): 子线程与主线程之间互相通信使用方法，传递的data为任意值。
@@ -105,9 +105,9 @@ FALLBACK:
   * 可以调用localstorge、cookies等本地存储方式；
   * localstorge另一个浏览上下文里被添加、修改或删除时，它会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；
     
-    ![](/assets/images/2017/h2.jpg)
+    ![]({{site.url}}/assets/images/2017/h2.jpg)
     
-    ![](/assets/images/2017/h3.jpg)
+    ![]({{site.url}}/assets/images/2017/h3.jpg)
  
   * webSocket：ajax轮询 需要服务器有很快的处理速度和资源。（速度）long poll 需要有很高的并发，也就是说同时接待客户的能力。（场地大小）就变成了这样，只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。（在程序设计中，这种设计叫做回调，即：你有信息了再来通知我，而不是我傻乎乎的每次跑来问你 ）
   * 如何兼容低浏览器？(阿里) Adobe Flash Socket 、ActiveX HTMLFile (IE) 、基于 multipart 编码发送 XHR 、基于长轮询的 XHR
@@ -116,7 +116,7 @@ FALLBACK:
 # 页面可见性（Page Visibility API） 
   * 通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
     
-    ![](/assets/images/2017/h4.jpg)
+    ![]({{site.url}}/assets/images/2017/h4.jpg)
 
 ---
 # 在页面上实现一个圆形的可点击区域
@@ -124,11 +124,11 @@ FALLBACK:
   * border-radius；
   * 纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等
 
-    ![](/assets/images/2017/h5.jpg)
+    ![]({{site.url}}/assets/images/2017/h5.jpg)
 
-    ![](/assets/images/2017/h6.jpg)
+    ![]({{site.url}}/assets/images/2017/h6.jpg)
  
-    ![](/assets/images/2017/h7.jpg)
+    ![]({{site.url}}/assets/images/2017/h7.jpg)
 
    
 # 画线
@@ -152,7 +152,7 @@ FALLBACK:
 # canvas与svg
   * canvas：元素本身并没有绘制能力（它仅仅是图形的容器），必须使用脚本来完成实际的绘图任务。Canvas提供的功能更原始，适合像素处理，动态渲染和大数据量绘制。
   * SVG可缩放矢量图形（Scalable Vector Graphics）：基于可扩展标记语言（XML），使用XML文档描述来绘图。SVG功能更完善，适合静态图片展示，高保真文档查看和打印的应用场景。
- ![](/assets/images/2017/h8.jpg)
+ ![]({{site.url}}/assets/images/2017/h8.jpg)
 
 ---
 # 缓存清除
@@ -160,13 +160,13 @@ FALLBACK:
 
   * meta方法
     
-    ![](/assets/images/2017/h9.jpg)
+    ![]({{site.url}}/assets/images/2017/h9.jpg)
 
   * 清理form表单的临时缓存：`<body onLoad="javascript:document.yourFormName.reset()">`
   * jquery ajax清除浏览器缓存
   * 用ajax请求服务器最新文件，并加上请求头`If-Modified-Since`和`Cache-Control`
 
-    ![](/assets/images/2017/h10.jpg)![](/assets/images/2017/h11.jpg)
+    ![]({{site.url}}/assets/images/2017/h10.jpg)![]({{site.url}}/assets/images/2017/h11.jpg)
  
   * 直接用cache:false
   * 用随机数：URL 参数后加上 `"?ran=" + Math.random()`;

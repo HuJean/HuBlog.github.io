@@ -9,60 +9,60 @@ tags: [面向对象]
 # 创建对象
   * 原始模式：这就是最简单的封装了，把两个属性封装在一个对象里面。但是，这样的写法有两个缺点，一是如果多生成几个实例，写起来就非常麻烦；二是实例与原型之间，没有任何办法，可以看出有什么联系。
   
-    ![](/assets/images/2017/j21.jpg)
+    ![]({{site.url}}/assets/images/2017/j21.jpg)
 
-    ![](/assets/images/2017/j22.jpg)
+    ![]({{site.url}}/assets/images/2017/j22.jpg)
 
   * 工厂模式：解决代码重复的问题，cat1和cat2之间没有内在的联系，不能反映出它们是同一个原型对象的实例。
     
-    ![](/assets/images/2017/j23.jpg)
+    ![]({{site.url}}/assets/images/2017/j23.jpg)
     
-    ![](/assets/images/2017/j24.jpg)
+    ![]({{site.url}}/assets/images/2017/j24.jpg)
 
   * 构造函数模式：所谓"构造函数"，其实就是一个普通函数，但是内部使用了this变量。对构造函数使用new运算符，就能生成实例，并且this变量会绑定在实例对象上。构造函数方法很好用，但是存在一个浪费内存的问题，相同的属性和方法每次都要生成。
    
-    ![](/assets/images/2017/j25.jpg)
+    ![]({{site.url}}/assets/images/2017/j25.jpg)
 
-    ![](/assets/images/2017/j26.jpg)
+    ![]({{site.url}}/assets/images/2017/j26.jpg)
 
-    ![](/assets/images/2017/j27.jpg)
+    ![]({{site.url}}/assets/images/2017/j27.jpg)
 
-    ![](/assets/images/2017/j28.jpg)
+    ![]({{site.url}}/assets/images/2017/j28.jpg)
 
   * Prototype（混合）模式：Javascript规定，每一个构造函数都有一个prototype属性，指向另一个对象。这个对象的所有属性和方法，都会被构造函数的实例继承，我们可以把那些不变的属性和方法，直接定义在prototype对象上。
      
-    ![](/assets/images/2017/j29.jpg)
+    ![]({{site.url}}/assets/images/2017/j29.jpg)
     
-    ![](/assets/images/2017/j210.jpg)
+    ![]({{site.url}}/assets/images/2017/j210.jpg)
 
 ---
 # 继承
   * 原型对象：最重要的作用就是把常量和方法独立到自身里，供给其它实例使用。
     
-    ![](/assets/images/2017/j211.jpg)
+    ![]({{site.url}}/assets/images/2017/j211.jpg)
 
   * 原型链：JavaScritp引擎在访问对象的属性时，如果在对象本身中没有找到，则会去原型链中查找，如果找到，直接返回值，如果整个链都遍历且没有找到属性，则返回undefined。原型链一般实现为一个链表，这样就可以按照一定的顺序来查找。
 
   * 继承实现
     * Js原型实现继承：引用类型的原型属性（数组、对象等）会被所有实例共享；在创建子类型的实例时，不能向父类的构造函数传递参数。
       
-      [](/assets/images/2017/j212.jpg)
+      []({{site.url}}/assets/images/2017/j212.jpg)
  
     * 构造函数实现继承
       
-      ![](/assets/images/2017/j214.jpg)
+      ![]({{site.url}}/assets/images/2017/j214.jpg)
 
     * call , apply实现组合继承
        
-      ![](/assets/images/2017/j217.jpg)
+      ![]({{site.url}}/assets/images/2017/j217.jpg)
 
     * 寄生式继承
       
-      ![](/assets/images/2017/j221.jpg)
+      ![]({{site.url}}/assets/images/2017/j221.jpg)
 
     * 寄生组合继承
       
-      ![](/assets/images/2017/j223.jpg)
+      ![]({{site.url}}/assets/images/2017/j223.jpg)
 
 ---
 # call和apply详解
@@ -70,9 +70,9 @@ tags: [面向对象]
   
   * call 方法可以用来代替另一个对象调用一个方法。call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
     
-    ![](/assets/images/2017/j224.jpg)
+    ![]({{site.url}}/assets/images/2017/j224.jpg)
     
-    ![](/assets/images/2017/j225.jpg)
+    ![]({{site.url}}/assets/images/2017/j225.jpg)
     
-    ![](/assets/images/2017/j226.jpg)
+    ![]({{site.url}}/assets/images/2017/j226.jpg)
 

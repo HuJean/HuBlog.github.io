@@ -14,7 +14,7 @@
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>前端模型 | 胡静</title>
-<meta name="generator" content="Jekyll v3.5.2" />
+<meta name="generator" content="Jekyll v3.7.3" />
 <meta property="og:title" content="前端模型" />
 <meta name="author" content="Dada" />
 <meta property="og:locale" content="en" />
@@ -175,7 +175,7 @@
   <li>
     <p>View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。</p>
 
-    <p><img src="/assets/images/2017/M1.jpg" alt="" /></p>
+    <p><img src="http://localhost:4000/assets/images/2017/M1.jpg" alt="" /></p>
   </li>
 </ul>
 
@@ -189,7 +189,7 @@
       <li>
         <p>Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain Model是不一样的。</p>
 
-        <p><img src="/assets/images/2017/M2.jpg" alt="" /></p>
+        <p><img src="http://localhost:4000/assets/images/2017/M2.jpg" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -205,7 +205,7 @@
       <li>
         <p>Presenter中除了业务逻辑以外，还有大量的View-&gt;Model，Model-&gt;View的手动同步逻辑，造成Presenter比较笨重，维护起来会比较困难。</p>
 
-        <p><img src="/assets/images/2017/M3.jpg" alt="" /></p>
+        <p><img src="http://localhost:4000/assets/images/2017/M3.jpg" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -222,7 +222,7 @@
       <li>
         <p>过于简单的图形界面不适用，或说牛刀杀鸡。对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高。数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的。</p>
 
-        <p><img src="/assets/images/2017/M4.jpg" alt="" /></p>
+        <p><img src="http://localhost:4000/assets/images/2017/M4.jpg" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -247,9 +247,9 @@
   <li>
     <p>将 HTML 代码（View 层）和 JS 代码（Controller 层）混杂在了一起，UI 与逻辑代码混杂在一起，阅读起来会非常吃力。一旦业务复杂起来，或者多人维护的情况下，几乎会失控。而且如果需要拼接的 HTML 代码里有很多引号的话（比如有大量的 href 属性，src 属性），那么就非常容易出错了（这样干过的应该深有体会）。这样一来，如果前端需要改 HTML 代码，只需要改模板即可。这样做的优点很明显，前端 UI和逻辑代码不再混杂，阅读体验良好，改动起来也方便了许多。</p>
 
-    <p><img src="/assets/images/2017/M5.jpg" alt="" /></p>
+    <p><img src="http://localhost:4000/assets/images/2017/M5.jpg" alt="" /></p>
 
-    <p><img src="/assets/images/2017/m6.jpg" alt="" /></p>
+    <p><img src="http://localhost:4000/assets/images/2017/m6.jpg" alt="" /></p>
   </li>
 </ul>
 

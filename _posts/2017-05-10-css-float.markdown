@@ -18,13 +18,13 @@ tags: [float]
 ### 效果
  * 块状元素，会钻进浮动元素的下面，被浮动元素所覆盖
 
-     ![](/assets/images/2017/float_1.jpg)
+     ![]({{site.url}}/assets/images/2017/float_1.jpg)
  * 行内元素，例如文字，则会环绕在浮动元素的周围，为浮动元素留出空间
 
-     ![](/assets/images/2017/float_2.jpg)
+     ![]({{site.url}}/assets/images/2017/float_2.jpg)
  * 浮动元素的父元素坍缩
 
-     ![](/assets/images/2017/float_3.jpg)
+     ![]({{site.url}}/assets/images/2017/float_3.jpg)
 
 ---
 ### 清除浮动的基本方法

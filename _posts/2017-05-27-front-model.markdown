@@ -11,7 +11,7 @@ tags: [Model]
   * 用户输入行为（键盘，鼠标等）会执行一些业务逻辑，可能会导致对应用程序数据的变更，数据的变更自然需要用户界面的同步变更以提供最准确的信息。
   * View不仅要响应用户操作的业务逻辑，而且要同步Model的变更。
 
-    ![](/assets/images/2017/M1.jpg)
+    ![]({{site.url}}/assets/images/2017/M1.jpg)
 
 ---
 # MVC
@@ -20,7 +20,7 @@ tags: [Model]
     * 把业务逻辑全部分离到Controller中，模块化程度高。当业务逻辑变更的时候，不需要变更View和Model，只需要Controller换成另外一个Controller就行了（Swappable Controller）。观察者模式可以做到多视图同时更新。
     * Controller测试困难。因为视图同步操作是由View自己执行，而View只能在有UI的环境下运行。在没有UI环境下对Controller进行单元测试的时候，Controller业务逻辑的正确性是无法验证的：Controller更新Model的时候，无法对View的更新操作进行断言。View无法组件化。View是强依赖特定的Model的，如果需要把这个View抽出来作为一个另外一个应用程序可复用的组件就困难了。因为不同程序的Domain Model是不一样的。
 
-      ![](/assets/images/2017/M2.jpg)
+      ![]({{site.url}}/assets/images/2017/M2.jpg)
 
 ---
 # MVP
@@ -29,7 +29,7 @@ tags: [Model]
     * 便于测试。Presenter对View是通过接口进行，在对Presenter进行不依赖UI环境的单元测试的时候。可以通过模拟一个View对象，这个对象只需要实现了View的接口即可。然后依赖注入到Presenter中，单元测试的时候就可以完整的测试Presenter业务逻辑的正确性；View可以进行组件化。在MVP当中，View不依赖Model。这样就可以让View从特定的业务场景中脱离出来，可以说View可以做到对业务逻辑完全无知。它只需要提供一系列接口提供给上层操作。这样就可以做高度可复用的View组件。
     * Presenter中除了业务逻辑以外，还有大量的View->Model，Model->View的手动同步逻辑，造成Presenter比较笨重，维护起来会比较困难。
 
-      ![](/assets/images/2017/M3.jpg)
+      ![]({{site.url}}/assets/images/2017/M3.jpg)
 
 ---
 # MVVM
@@ -39,7 +39,7 @@ tags: [Model]
     * 提高可维护性。解决了MVP大量的手动View和Model同步的问题，提供双向绑定机制。提高了代码的可维护性。简化测试。因为同步逻辑是交由Binder做的，View跟着Model同时变更，所以只需要保证Model的正确性，View就正确。大大减少了对View同步更新的测试。
     * 过于简单的图形界面不适用，或说牛刀杀鸡。对于大型的图形应用程序，视图状态较多，ViewModel的构建和维护的成本都会比较高。数据绑定的声明是指令式地写在View的模版当中的，这些内容是没办法去打断点debug的。
 
-      ![](/assets/images/2017/M4.jpg)
+      ![]({{site.url}}/assets/images/2017/M4.jpg)
 
 ---
 # SPA
@@ -53,6 +53,6 @@ tags: [Model]
 # 前端模板
   * 将 HTML 代码（View 层）和 JS 代码（Controller 层）混杂在了一起，UI 与逻辑代码混杂在一起，阅读起来会非常吃力。一旦业务复杂起来，或者多人维护的情况下，几乎会失控。而且如果需要拼接的 HTML 代码里有很多引号的话（比如有大量的 href 属性，src 属性），那么就非常容易出错了（这样干过的应该深有体会）。这样一来，如果前端需要改 HTML 代码，只需要改模板即可。这样做的优点很明显，前端 UI和逻辑代码不再混杂，阅读体验良好，改动起来也方便了许多。
 
-    ![](/assets/images/2017/M5.jpg)
+    ![]({{site.url}}/assets/images/2017/M5.jpg)
 
-    ![](/assets/images/2017/m6.jpg)
+    ![]({{site.url}}/assets/images/2017/m6.jpg)

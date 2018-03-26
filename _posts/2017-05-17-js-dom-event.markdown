@@ -12,14 +12,14 @@ tags: [DOM, 事件]
   * 删除：`removeChild(element)` 先找到父元素，然后删除子元素
   * 移动
     
-    ![move](/assets/images/2017/d1.jpg)
+    ![move]({{site.url}}/assets/images/2017/d1.jpg)
     
-    ![move](/assets/images/2017/d2.jpg)
+    ![move]({{site.url}}/assets/images/2017/d2.jpg)
 
   * 复制：`cloneNode(cloneChildNodes)`
   * 查找
     
-    ![move](/assets/images/2017/d3.jpg)
+    ![move]({{site.url}}/assets/images/2017/d3.jpg)
 
 ---
 # 事件流
@@ -33,6 +33,6 @@ tags: [DOM, 事件]
   * `document.getElementById("test").onclick = function(e){}`，后续添加的事件会覆盖前面的，无法绑定多个事件；
   * `addEventListener`和`removeEventListener`，最后一个参数是布尔型，`true`代表捕获事件，`false`代表冒泡事件。
     
-    ![](/assets/images/2017/d4.jpg)
+    ![]({{site.url}}/assets/images/2017/d4.jpg)
 
  
