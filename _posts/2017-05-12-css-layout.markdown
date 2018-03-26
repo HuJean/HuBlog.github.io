@@ -10,35 +10,35 @@ tags: [Layout]
 # 两栏布局（左边宽度固定，右边自动适应）
  * 左浮动其中一个DIV，使其脱离文档流，另一个DIV不设置浮动即可。设置浮动可以让元素脱离正常的文档流，使后面的元素占据浮动元素本身的位置。但是浮动元素只能影响后面的元素的位置，而不能够影响前面的元素，也不能叠加在前面的元素上。
 
-    ![]({{site.url}}/assets/images/2017/layout_1.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_1.jpg)
 
   * 使用绝对定位方法，是固定宽度的DIV固定在左侧，然后设置自适应的层的左边距。
 
-    ![]({{site.url}}/assets/images/2017/layout_2.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_2.jpg)
 
   * 增加一个浮动层，设置宽度为100%，包裹中的自适应宽度层设置左边距，然后控制固定宽度的层的负外边距(不兼容IE6)
 
-    ![]({{site.url}}/assets/images/2017/layout_3-1.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_3-1.jpg)
 
 ---
 # 三栏布局（左右宽度固定，中间自适应宽度）
   * 设置浮动，使文档脱离文档流，注意层的顺序
 
-    ![]({{site.url}}/assets/images/2017/layout_4.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_4.jpg)
 
   * 同样通过负边距来实现，缺点是需要另外增加一个层
 
-    ![]({{site.url}}/assets/images/2017/layout_5.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_5.jpg)
 
   * 也可以通过绝对定位来实现
 
-    ![]({{site.url}}/assets/images/2017/layout_6.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_6.jpg)
 
 ---
 # 三栏布局（左右自适应，中间宽度固定）
   * 这个有点变态，一般没这么布局的
 
-    ![]({{site.url}}/assets/images/2017/layout_7.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/layout_7.jpg)
 
 ---
 # 居中
@@ -52,7 +52,7 @@ tags: [Layout]
         > * 通过子元素相对父元素绝对定位 box-sizing: border-box; 宽度就是包含border+padding+content
         > * 利用flex-box                     
       
-          ![]({{site.url}}/assets/images/2017/layout_8.jpg)
+          ![]({{site.baseurl}}/assets/images/2017/layout_8.jpg)
 
   * 垂直居中
     * 子元素是行内元素，高度是由其内容撑开的：设定父元素的line-height为其高度来使得子元素垂直居中；
@@ -60,7 +60,7 @@ tags: [Layout]
       > * 通过给父元素设定display:table-cell;vertical-align:middle来解决
       > * flexbox 
 
-        ![]({{site.url}}/assets/images/2017/layout_10.jpg)
+        ![]({{site.baseurl}}/assets/images/2017/layout_10.jpg)
  
     * 子元素是块级元素且高度已经设定
       > * 计算子元素的margin-top或margin-bottom，计算方法为父(元素高度-子元素高度)/2
@@ -68,7 +68,7 @@ tags: [Layout]
       > * 利用绝对定位，让子元素相对于父元素绝对定位
       > * 利用flexbox  
 
-        ![]({{site.url}}/assets/images/2017/layout_11.jpg)
+        ![]({{site.baseurl}}/assets/images/2017/layout_11.jpg)
 
 ---
 # Flex-flow 详解

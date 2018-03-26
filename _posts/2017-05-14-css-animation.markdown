@@ -8,14 +8,14 @@ tags: [Animation]
 
 ### Transitions
 * 平滑的改变CSS的值
- > ![]({{site.url}}/assets/images/2017/an_1.jpg)
+ > ![]({{site.baseurl}}/assets/images/2017/an_1.jpg)
 
 ---
 ### Transforms
 * 拉伸，压缩，旋转，偏移
- > ![]({{site.url}}/assets/images/2017/an_2.jpg)
+ > ![]({{site.baseurl}}/assets/images/2017/an_2.jpg)
 
 ---
 ### Animation
 * 会在每个关键帧之间插入补间动画，所以动画效果是连贯性的
- > ![]({{site.url}}/assets/images/2017/an_3.jpg)
+ > ![]({{site.baseurl}}/assets/images/2017/an_3.jpg)

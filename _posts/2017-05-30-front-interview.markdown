@@ -11,7 +11,7 @@ tags: [Interview]
   * 特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；
   * 匹配模式（pattern） 
    
-    ![]({{site.url}}/assets/images/2017/mian1.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/mian1.jpg)
 
   * 去掉空格、回车、制表符
    * `str.replace(/(^\s*)|(\s*$)/g, "")`：`(\s*)`表示连续空格的字符串、`^`表示以开始、`$`表示以结尾；
@@ -91,7 +91,7 @@ tags: [Interview]
 
 ---
 # 手写盒子模型中
-  * 获取盒子内子节点的class样式，盒子内节点的类型不可知![]({{site.url}}/assets/images/2017/mian2.jpg)
+  * 获取盒子内子节点的class样式，盒子内节点的类型不可知![]({{site.baseurl}}/assets/images/2017/mian2.jpg)
 
 ---
 # JS底层实现原理

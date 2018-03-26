@@ -6,7 +6,7 @@ categories: [网络]
 tags: [HTTP, State]
 ---
 
-![]({{site.url}}/assets/images/2017/http.jpg)
+![]({{site.baseurl}}/assets/images/2017/http.jpg)
 
 
 # 1** 

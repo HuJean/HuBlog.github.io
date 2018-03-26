@@ -12,11 +12,11 @@ tags: [HTTP]
 
 # 请求报文
   
-    ![2]({{site.url}}/assets/images/2017/HTTP1.jpg)
+    ![2]({{site.baseurl}}/assets/images/2017/HTTP1.jpg)
 
 # 响应报文
    
-    ![2]({{site.url}}/assets/images/2017/HTTP2.jpg)
+    ![2]({{site.baseurl}}/assets/images/2017/HTTP2.jpg)
 
 ---
 # GET与POST的区别。
@@ -29,12 +29,12 @@ tags: [HTTP]
 # Cookie
   * Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。
 
-    ![]({{site.url}}/assets/images/2017/HTTP3.jpg)![]({{site.url}}/assets/images/2017/HTTP4.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/HTTP3.jpg)![]({{site.baseurl}}/assets/images/2017/HTTP4.jpg)
   
 # 持久化
   * 如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。　当设置成keep-alive，如上面所示的百度的http头部信息所示，就会建立一条持久化的连接。不需要每次都建立连接，再中断。
 
-    ![]({{site.url}}/assets/images/2017/HTTP5.jpg)![]({{site.url}}/assets/images/2017/HTTP6.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/HTTP5.jpg)![]({{site.baseurl}}/assets/images/2017/HTTP6.jpg)
 
 # 管道化
   * 如果一个http请求，请求了大量的图片等大文件，那么其他的http请求怎么办呢？http可以一次发送多个http请求，然后等待响应连接。不需要排队等候，这样就加快了http的响应时间。

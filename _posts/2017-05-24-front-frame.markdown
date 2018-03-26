@@ -23,7 +23,7 @@ tags: [Framework]
   * requirejs、seajs
   * 将一些属性比较类似和行为比较类似的内容放在同一个js文件里面，把这个js文件称为模块，了每个js文件只关注与自身有关的事情，让每个js文件各行其职；
   * MVC：veiw ( html + css + js )写静态页面 css、js、img及效果；controller ( 专注于实现服务和逻辑控制的层面叫做控制器 )监听页面中请求和事件，处理请求和事件；向model请求数据，得到数据后绑定到页面；model ( 数据变量 || ajax从服务端取回的数据 )对外提供一些数据
-  * 命名冲突、文件依赖![]({{site.url}}/assets/images/2017/k1.jpg)![]({{site.url}}/assets/images/2017/k2.jpg)
+  * 命名冲突、文件依赖![]({{site.baseurl}}/assets/images/2017/k1.jpg)![]({{site.baseurl}}/assets/images/2017/k2.jpg)
 
 ---
   
@@ -44,5 +44,5 @@ tags: [Framework]
   * 移动设备优先：在html文件中head区域加入这样的一个meta标签，name=“viewpoint”是指这个标签对移动设备生效，content中width=device-width是指宽度为设备宽度，initial-scale=1意思是初始缩放比例为1.
   * 栅格系统：将一个页面可以拆分成多个区块来理解，而正是这些区块共同构成了真个页面的布局。根据不同的屏幕尺寸情况，调整这些区块的排版，就可以实现响应式设计。另外，屏幕宽度较大的时候，区块倾向于水平分布，而屏幕宽度较小的时候，区块倾向于竖直堆叠。 栅格样式库一般是这样做的：将页面划分为若干等宽的列（column），然后推荐你通过等宽列来创建响应式的页面区块。 Bootstrap把它的栅格放在CSS这个分类下，并称它为Gird system。默认分为12列。
   
-    ![]({{site.url}}/assets/images/2017/k3.jpg)
+    ![]({{site.baseurl}}/assets/images/2017/k3.jpg)
 

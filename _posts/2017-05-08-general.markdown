@@ -6,4 +6,4 @@ categories: [Front-end]
 tags: [Front-end]
 ---
 
-![Front-end]({{site.url}}/assets/images/2017/web.png)
+![Front-end]({{site.baseurl}}/assets/images/2017/web.png)
