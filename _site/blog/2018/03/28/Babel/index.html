@@ -13,23 +13,23 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>JS进阶之ES6 | 胡静</title>
+<title>Babel学习笔记 | 胡静</title>
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="JS进阶之ES6" />
+<meta property="og:title" content="Babel学习笔记" />
 <meta name="author" content="Dada" />
 <meta property="og:locale" content="en" />
-<meta name="description" content="ECMAScript 2015（ES6）的十大特征 https://www.jianshu.com/p/287e0bb867ae 默认参数：var link = function(height = 50, color = &#39;red&#39;, url = &#39;http://azat.co&#39;) {...} 模板对象：var name = &#39;Your name is ${first} ${last}.&#39; ; 反引号 多行字符串：反引号 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。" />
-<meta property="og:description" content="ECMAScript 2015（ES6）的十大特征 https://www.jianshu.com/p/287e0bb867ae 默认参数：var link = function(height = 50, color = &#39;red&#39;, url = &#39;http://azat.co&#39;) {...} 模板对象：var name = &#39;Your name is ${first} ${last}.&#39; ; 反引号 多行字符串：反引号 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。" />
-<link rel="canonical" href="http://localhost:4000/blog/2017/05/29/es6/" />
-<meta property="og:url" content="http://localhost:4000/blog/2017/05/29/es6/" />
+<meta name="description" content="Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。" />
+<meta property="og:description" content="Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。" />
+<link rel="canonical" href="http://localhost:4000/blog/2018/03/28/Babel/" />
+<meta property="og:url" content="http://localhost:4000/blog/2018/03/28/Babel/" />
 <meta property="og:site_name" content="胡静" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-05-29T07:00:00+08:00" />
+<meta property="article:published_time" content="2018-03-28T07:00:00+08:00" />
 <script type="application/ld+json">
-{"description":"ECMAScript 2015（ES6）的十大特征 https://www.jianshu.com/p/287e0bb867ae 默认参数：var link = function(height = 50, color = &#39;red&#39;, url = &#39;http://azat.co&#39;) {...} 模板对象：var name = &#39;Your name is ${first} ${last}.&#39; ; 反引号 多行字符串：反引号 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。","author":{"@type":"Person","name":"Dada"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2017/05/29/es6/","headline":"JS进阶之ES6","dateModified":"2017-05-29T07:00:00+08:00","datePublished":"2017-05-29T07:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2017/05/29/es6/"},"@context":"http://schema.org"}</script>
+{"description":"Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。","author":{"@type":"Person","name":"Dada"},"@type":"BlogPosting","url":"http://localhost:4000/blog/2018/03/28/Babel/","headline":"Babel学习笔记","dateModified":"2018-03-28T07:00:00+08:00","datePublished":"2018-03-28T07:00:00+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/blog/2018/03/28/Babel/"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-<meta name="keywords" content="ES6" />
+<meta name="keywords" content="Babel" />
 
 
 
@@ -119,7 +119,7 @@
             <header>
                 <div class="unit-head">
                     <div class="unit-inner unit-head-inner">
-                        <h1 class="entry-title" itemprop="name">JS进阶之ES6</h1>
+                        <h1 class="entry-title" itemprop="name">Babel学习笔记</h1>
                     </div>
                 </div>
             </header>
@@ -129,7 +129,7 @@
                         <p class="date-publish">
                             Published:
                             <time itemprop="datePublished" class="date-pub updated"
-                                title="2017-05-29T07:00:00+08:00" datetime="2017-05-29T07:00:00+08:00">May 29, 2017 </time>
+                                title="2018-03-28T07:00:00+08:00" datetime="2018-03-28T07:00:00+08:00">March 28, 2018 </time>
                             by
                             <a class="author" href="/" rel="author" title="Show Author">
                                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -144,8 +144,8 @@
                              
      
         <li>
-            <a href="/blog/categories/#JS" title="JS">
-            JS <span>7</span></a>
+            <a href="/blog/categories/#前端工具" title="前端工具">
+            前端工具 <span>2</span></a>
         </li>
     
 
@@ -158,7 +158,7 @@
     
         
         <li>
-            <a href="/blog/tags/#ES6" title="ES6">ES6 <span>1</span></a>
+            <a href="/blog/tags/#Babel" title="Babel">Babel <span>1</span></a>
         </li>
     
 
@@ -168,101 +168,114 @@
                         </ul>
                     </div>
                     <div itemprop="articleBody">
-                        <h1 id="heading-ecmascript-2015es6的十大特征">ECMAScript 2015（ES6）的十大特征</h1>
+                        <p>Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。</p>
+
+<h1 id="heading-基本使用">基本使用</h1>
 <ul>
-  <li>https://www.jianshu.com/p/287e0bb867ae</li>
-  <li>默认参数：<code class="highlighter-rouge">var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}</code></li>
-  <li>模板对象：<code class="highlighter-rouge">var name = 'Your name is ${first} ${last}.' </code>; 反引号</li>
-  <li>多行字符串：反引号</li>
-  <li>解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。</li>
-  <li>
-    <p>增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。</p>
-
-    <p><img src="/assets/images/2017/es1.jpg" alt="" /></p>
-  </li>
-  <li>箭头函数：箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的this是词法作用域，由上下文确定，完全修复了this的指向，this总是指向词法作用域。</li>
-</ul>
-
-<hr />
-<ul>
-  <li>
-    <p>Promises</p>
-
-    <p><img src="/assets/images/2017/es2.jpg" alt="" /></p>
-  </li>
-  <li>异步方法调用中，往往会出现回调函数一环扣一环的情况。这种情况导致了回调金字塔问题的出现。不仅代码写起来费劲又不美观，而且问题复杂的时候，阅读代码的人也难以理解。</li>
-  <li>
-    <p>三种状态：Fulfilled成功、Rejected失败、Pending为 Promise 对象实例创建时候的初始状态，待执行；</p>
-
-    <p><img src="/assets/images/2017/es3.jpg" alt="" /></p>
-  </li>
-  <li>ajax操作Promise化，可以实现链式使用。避免了传统的只能使用回调的麻烦。</li>
-  <li>Promise实现异步任务顺序执行</li>
-  <li>Promise实现异步任务并行执行</li>
-  <li>
-    <p>顺序执行效率低，并行执行但是需要所有的数据加载完成才能开始渲染，并行加载顺序渲染。</p>
-
-    <p><img src="/assets/images/2017/es4.jpg" alt="" /></p>
-
-    <p><img src="/assets/images/2017/es5.jpg" alt="" /></p>
-  </li>
-  <li>
-    <p>第一步，加载了story.json的数据；第二步，把数据转换成JSON格式；第三步，把JSON数据打印出来。</p>
-
-    <p><img src="/assets/images/2017/es6.jpg" alt="" /></p>
-
-    <p><img src="/assets/images/2017/es7.jpg" alt="" /></p>
-
-    <p><img src="/assets/images/2017/es8.jpg" alt="" /></p>
-  </li>
-</ul>
-
-<hr />
-<ul>
-  <li>块级作用域
+  <li>安装插件：</li>
+  <li>配置文件：.babelrc
     <ul>
-      <li>let声明的变量只在块级有效。let没有‘变量提升’的特性，而却有‘暂时性死区（temporal dead zone）’的特性。</li>
-      <li>const命令与let命令一样，声明的变量，其作用域都是块级。所以const遵循的规则与let相差无二，只是，const是用来声明恒定变量的。且用const声明恒定变量，声明的同时就必须赋值，否则会报错。</li>
+      <li>plugins：插件</li>
+      <li>presets字段设定转码规则</li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  ES2015转码规则
+  $ npm install --save-dev babel-preset-es2015
+  react转码规则
+  $ npm install --save-dev babel-preset-react
+  ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+  $ npm install --save-dev babel-preset-stage-0
+  $ npm install --save-dev babel-preset-stage-1
+  $ npm install --save-dev babel-preset-stage-2
+  $ npm install --save-dev babel-preset-stage-3
+</code></pre>
+    </div>
+  </li>
+  <li>工具
+    <ul>
+      <li>babel-cli：命令行转码</li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  安装
+  $ npm install --save-dev babel-cli
+  package.json
+  // ...
+  "devDependencies": {
+    "babel-cli": "^6.0.0"
+  },
+  "scripts": {
+    "build": "babel src -d lib"
+  }
+  运行
+  $ npm run build
+</code></pre>
+    </div>
+
+    <ul>
+      <li>babel-register：模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。</li>
+    </ul>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  安装
+  $ npm install --save-dev babel-register
+  运行前
+  require("babel-register");
+  require("./index.js");
+</code></pre>
+    </div>
+
+    <ul>
+      <li>babel-core：如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。</li>
+      <li>babel-polyfill</li>
     </ul>
   </li>
-  <li>类
+  <li>与其他工具的配合
     <ul>
-      <li>类的所有实例共享一个原型对象。</li>
-      <li>不存在变量提升</li>
-      <li>私有方法添加下划线</li>
-      <li>类的方法内部如果含有this，它默认指向类的实例</li>
-      <li>继承extends，子类必须在constructor方法中调用super方法，否则新建实例时会报错。</li>
+      <li>ESLint：用于静态检查代码的语法和风格</li>
     </ul>
-  </li>
-  <li>模块
-    <ul>
-      <li>JS是解释型语言，边加载边运行，后续脚本运行时，这些脚本所依赖的一切必须已经加载完毕；JS脚本加载时会阻塞浏览器，如果加载的JS很多很大，浏览器会卡住，带来很差的用户体验；通过调整script标签顺序可以修改JS模块之间的依赖，然而当模块很多时，这种做法就不可用了。</li>
-      <li>AMD模块（RequireJS）、CommonJS模块（Node.js）、CMD(SeaJS)</li>
-      <li>导出export</li>
-      <li>
-        <h2 id="heading-导入import">导入import</h2>
-      </li>
-    </ul>
-  </li>
-</ul>
 
-<h1 id="heading-es7拓展">ES7拓展</h1>
-<ul>
-  <li>求幂运算符（**）</li>
-  <li>Array.prototype.includes()方法</li>
-  <li>函数作用域中严格模式的变更</li>
+    <div class="highlighter-rouge"><pre class="highlight"><code>  安装
+  $ npm install --save-dev eslint babel-eslint
+  配置 .eslint
+  {
+    "parser": "babel-eslint",
+    "rules": {...}
+  }
+  package.json之中，加入相应的scripts脚本 "lint": "eslint my-files.js"
+</code></pre>
+    </div>
+
+    <ul>
+      <li>Mocha：一个测试框架</li>
+    </ul>
+  </li>
 </ul>
 
 <hr />
 
-<h1 id="heading-es8拓展">ES8拓展</h1>
+<h1 id="heading-工作原理">工作原理</h1>
 <ul>
-  <li>Object.entries 和 Object.values</li>
-  <li>String.prototype.padStart / String.prototype.padEnd</li>
-  <li>Object.getOwnPropertyDeors</li>
-  <li>异步函数(Async functions)</li>
-  <li>共享内存与原子化(atomics)</li>
+  <li>解析：将代码字符串解析成抽象语法树
+    <ul>
+      <li>分词：将整个代码字符串分割成语法单元数组</li>
+      <li>语义分析</li>
+    </ul>
+  </li>
+  <li>变换：对抽象语法树进行变换操作</li>
+  <li>再建：根据变换后的抽象语法树再生成代码字符串</li>
 </ul>
+
+<h1 id="heading-深入理解">深入理解</h1>
+<ul>
+  <li>Plugin：转换的执行者</li>
+  <li>Preset：转换规则的集合</li>
+  <li>在饿了么大前端的一些实践
+    <ul>
+      <li>无痕埋点</li>
+      <li>错误日志收集</li>
+    </ul>
+  </li>
+</ul>
+
 
                     </div>
                 </div>
@@ -275,10 +288,10 @@
                     </div>
                     <nav class="pagination">
                         
-                            <a class="internal" rel="prev" href="/blog/2017/05/28/front-dev/" title=" '前端开发流程'"> ← 前端开发流程</a>
+                            <a class="internal" rel="prev" href="/blog/2018/03/27/react/" title=" 'React学习笔记'"> ← React学习笔记</a>
                         
                         
-                            <a class="internal" rel="next" href="/blog/2017/05/30/front-interview/" title="Next Post '前端面试'">前端面试 → </a>
+                            <a class="internal" rel="next" href="/blog/2018/03/28/GraphQL/" title="Next Post 'GraphQL学习笔记'">GraphQL学习笔记 → </a>
                         
                     </nav>
                 </div>

@@ -1,0 +1,93 @@
+---
+layout: post
+title: Babel学习笔记
+date: '2018-03-28 07:00:00'
+categories: [前端工具]
+tags: [Babel]
+---
+
+Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。
+
+# 基本使用
+  * 安装插件：
+  * 配置文件：.babelrc 
+    * plugins：插件
+    * presets字段设定转码规则
+
+    ~~~
+      ES2015转码规则
+      $ npm install --save-dev babel-preset-es2015
+      react转码规则
+      $ npm install --save-dev babel-preset-react
+      ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+      $ npm install --save-dev babel-preset-stage-0
+      $ npm install --save-dev babel-preset-stage-1
+      $ npm install --save-dev babel-preset-stage-2
+      $ npm install --save-dev babel-preset-stage-3
+    ~~~
+    
+  * 工具
+    * babel-cli：命令行转码
+
+    ~~~
+      安装
+      $ npm install --save-dev babel-cli
+      package.json
+      // ...
+      "devDependencies": {
+        "babel-cli": "^6.0.0"
+      },
+      "scripts": {
+        "build": "babel src -d lib"
+      }
+      运行
+      $ npm run build
+    ~~~
+
+    * babel-register：模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。
+
+    ~~~
+      安装
+      $ npm install --save-dev babel-register
+      运行前
+      require("babel-register");
+      require("./index.js");
+    ~~~
+
+    * babel-core：如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。
+    * babel-polyfill
+
+  * 与其他工具的配合
+    * ESLint：用于静态检查代码的语法和风格
+
+    ~~~
+      安装
+      $ npm install --save-dev eslint babel-eslint
+      配置 .eslint
+      {
+        "parser": "babel-eslint",
+        "rules": {...}
+      }
+      package.json之中，加入相应的scripts脚本 "lint": "eslint my-files.js"
+    ~~~
+
+    * Mocha：一个测试框架
+
+---
+
+# 工作原理
+  * 解析：将代码字符串解析成抽象语法树
+    * 分词：将整个代码字符串分割成语法单元数组
+    * 语义分析
+  * 变换：对抽象语法树进行变换操作
+  * 再建：根据变换后的抽象语法树再生成代码字符串
+
+# 深入理解
+  * Plugin：转换的执行者
+  * Preset：转换规则的集合
+  * 在饿了么大前端的一些实践
+    * 无痕埋点
+    * 错误日志收集
+
+
+

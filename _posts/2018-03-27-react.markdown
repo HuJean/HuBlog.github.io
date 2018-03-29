@@ -1,0 +1,45 @@
+---
+layout: post
+title: React学习笔记
+date: '2018-03-27 07:00:00'
+categories: [Framework]
+tags: [React]
+---
+
+# 模块化
+  * RequireJS: 模块加载器，基于AMD规范;
+  * browserify: 基于CommonJS，服务端nodejs自带工具，使用require和module.exports构建项目;
+  * webpack: 前端模块打包工具，JS、CSS及其他所有模块管理;
+
+---
+
+# webpack
+  * webpack.config.js 配置入口和输出
+  * code spliting（代码拆分） 异步加载代码块，而不是简单的打包成一个大文件;
+  * 静态分析 
+  * 模块热替换（hot module replacement） webpack-dev-server --hot
+  * loader: css-loader、style-loader、jsx-loader
+  * 插件plugin: HtmlWebpackPlugin、EnvironmentPlugin、BannerPlugin
+
+---
+
+# React
+  * JSX
+  * Virtual DOM
+  * 组件
+  * 工具: webpack、babel、ESLint
+
+## 虚拟DOM
+
+## 组件化开发
+
+---
+
+# Flux
+
+---
+
+#Redux
+
+---
+

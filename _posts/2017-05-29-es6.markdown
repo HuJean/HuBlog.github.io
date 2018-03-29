@@ -6,7 +6,8 @@ categories: [JS]
 tags: [ES6]
 ---
 
-# ECMAScript 2015（ES6）的十大特征
+# ECMAScript 2015（ES6）的十大特征 
+  * https://www.jianshu.com/p/287e0bb867ae
   * 默认参数：`var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}`
   * 模板对象：`var name = 'Your name is ${first} ${last}.' `; 反引号
   * 多行字符串：反引号
@@ -59,3 +60,18 @@ tags: [ES6]
     * AMD模块（RequireJS）、CommonJS模块（Node.js）、CMD(SeaJS)
     * 导出export
     * 导入import
+---
+
+# ES7拓展
+  * 求幂运算符（**）
+  * Array.prototype.includes()方法
+  * 函数作用域中严格模式的变更
+
+---
+
+# ES8拓展
+  * Object.entries 和 Object.values
+  * String.prototype.padStart / String.prototype.padEnd
+  * Object.getOwnPropertyDeors
+  * 异步函数(Async functions)
+  * 共享内存与原子化(atomics)

@@ -1,4 +1,152 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-26T14:17:42+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-29T10:01:45+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">GraphQL学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/GraphQL/" rel="alternate" type="text/html" title="GraphQL学习笔记" /><published>2018-03-28T08:00:00+08:00</published><updated>2018-03-28T08:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/GraphQL</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/GraphQL/">&lt;p&gt;GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
+GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。&lt;/p&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="GraphQL" /><summary type="html">GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。 GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。</summary></entry><entry><title type="html">Babel学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/Babel/" rel="alternate" type="text/html" title="Babel学习笔记" /><published>2018-03-28T07:00:00+08:00</published><updated>2018-03-28T07:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/Babel</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/Babel/">&lt;p&gt;Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。&lt;/p&gt;
+
+&lt;h1 id=&quot;heading-基本使用&quot;&gt;基本使用&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;安装插件：&lt;/li&gt;
+  &lt;li&gt;配置文件：.babelrc
+    &lt;ul&gt;
+      &lt;li&gt;plugins：插件&lt;/li&gt;
+      &lt;li&gt;presets字段设定转码规则&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ES2015转码规则
+  $ npm install --save-dev babel-preset-es2015
+  react转码规则
+  $ npm install --save-dev babel-preset-react
+  ES7不同阶段语法提案的转码规则（共有4个阶段），选装一个
+  $ npm install --save-dev babel-preset-stage-0
+  $ npm install --save-dev babel-preset-stage-1
+  $ npm install --save-dev babel-preset-stage-2
+  $ npm install --save-dev babel-preset-stage-3
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;工具
+    &lt;ul&gt;
+      &lt;li&gt;babel-cli：命令行转码&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  安装
+  $ npm install --save-dev babel-cli
+  package.json
+  // ...
+  &quot;devDependencies&quot;: {
+    &quot;babel-cli&quot;: &quot;^6.0.0&quot;
+  },
+  &quot;scripts&quot;: {
+    &quot;build&quot;: &quot;babel src -d lib&quot;
+  }
+  运行
+  $ npm run build
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;babel-register：模块改写require命令，为它加上一个钩子。此后，每当使用require加载.js、.jsx、.es和.es6后缀名的文件，就会先用Babel进行转码。&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  安装
+  $ npm install --save-dev babel-register
+  运行前
+  require(&quot;babel-register&quot;);
+  require(&quot;./index.js&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;babel-core：如果某些代码需要调用Babel的API进行转码，就要使用babel-core模块。&lt;/li&gt;
+      &lt;li&gt;babel-polyfill&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;与其他工具的配合
+    &lt;ul&gt;
+      &lt;li&gt;ESLint：用于静态检查代码的语法和风格&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  安装
+  $ npm install --save-dev eslint babel-eslint
+  配置 .eslint
+  {
+    &quot;parser&quot;: &quot;babel-eslint&quot;,
+    &quot;rules&quot;: {...}
+  }
+  package.json之中，加入相应的scripts脚本 &quot;lint&quot;: &quot;eslint my-files.js&quot;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;Mocha：一个测试框架&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-工作原理&quot;&gt;工作原理&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;解析：将代码字符串解析成抽象语法树
+    &lt;ul&gt;
+      &lt;li&gt;分词：将整个代码字符串分割成语法单元数组&lt;/li&gt;
+      &lt;li&gt;语义分析&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;变换：对抽象语法树进行变换操作&lt;/li&gt;
+  &lt;li&gt;再建：根据变换后的抽象语法树再生成代码字符串&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;heading-深入理解&quot;&gt;深入理解&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Plugin：转换的执行者&lt;/li&gt;
+  &lt;li&gt;Preset：转换规则的集合&lt;/li&gt;
+  &lt;li&gt;在饿了么大前端的一些实践
+    &lt;ul&gt;
+      &lt;li&gt;无痕埋点&lt;/li&gt;
+      &lt;li&gt;错误日志收集&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Babel" /><summary type="html">Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。</summary></entry><entry><title type="html">React学习笔记</title><link href="http://localhost:4000/blog/2018/03/27/react/" rel="alternate" type="text/html" title="React学习笔记" /><published>2018-03-27T07:00:00+08:00</published><updated>2018-03-27T07:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/27/react</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/27/react/">&lt;h1 id=&quot;heading-模块化&quot;&gt;模块化&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;RequireJS: 模块加载器，基于AMD规范;&lt;/li&gt;
+  &lt;li&gt;browserify: 基于CommonJS，服务端nodejs自带工具，使用require和module.exports构建项目;&lt;/li&gt;
+  &lt;li&gt;webpack: 前端模块打包工具，JS、CSS及其他所有模块管理;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-webpack&quot;&gt;webpack&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;webpack.config.js 配置入口和输出&lt;/li&gt;
+  &lt;li&gt;code spliting（代码拆分） 异步加载代码块，而不是简单的打包成一个大文件;&lt;/li&gt;
+  &lt;li&gt;静态分析&lt;/li&gt;
+  &lt;li&gt;模块热替换（hot module replacement） webpack-dev-server –hot&lt;/li&gt;
+  &lt;li&gt;loader: css-loader、style-loader、jsx-loader&lt;/li&gt;
+  &lt;li&gt;插件plugin: HtmlWebpackPlugin、EnvironmentPlugin、BannerPlugin&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-react&quot;&gt;React&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;JSX&lt;/li&gt;
+  &lt;li&gt;Virtual DOM&lt;/li&gt;
+  &lt;li&gt;组件&lt;/li&gt;
+  &lt;li&gt;工具: webpack、babel、ESLint&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;heading-虚拟dom&quot;&gt;虚拟DOM&lt;/h2&gt;
+
+&lt;h2 id=&quot;heading-组件化开发&quot;&gt;组件化开发&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-flux&quot;&gt;Flux&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;#Redux&lt;/p&gt;
+
+&lt;hr /&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="React" /><summary type="html">模块化 RequireJS: 模块加载器，基于AMD规范; browserify: 基于CommonJS，服务端nodejs自带工具，使用require和module.exports构建项目; webpack: 前端模块打包工具，JS、CSS及其他所有模块管理;</summary></entry><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var expression = /pattern /flags&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；&lt;/li&gt;
@@ -111,6 +259,7 @@
   &lt;li&gt;BOM（浏览器对象模型）：提供了独立于内容而在浏览器窗口之间进行交互的对象和方法。Browser Object Model ”的缩写，简称“ 浏览器对象模型 ”。BOM 定义了 JavaScript 操作浏览器的接口，提供了访问某些功能（如浏览器窗口大小、版本信息、浏览历史记录等）的途径以及操作方法。&lt;/li&gt;
 &lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Interview" /><summary type="html">RegExp var expression = /pattern /flags 特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式； 匹配模式（pattern）</summary></entry><entry><title type="html">JS进阶之ES6</title><link href="http://localhost:4000/blog/2017/05/29/es6/" rel="alternate" type="text/html" title="JS进阶之ES6" /><published>2017-05-29T07:00:00+08:00</published><updated>2017-05-29T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/29/es6</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/29/es6/">&lt;h1 id=&quot;heading-ecmascript-2015es6的十大特征&quot;&gt;ECMAScript 2015（ES6）的十大特征&lt;/h1&gt;
 &lt;ul&gt;
+  &lt;li&gt;https://www.jianshu.com/p/287e0bb867ae&lt;/li&gt;
   &lt;li&gt;默认参数：&lt;code class=&quot;highlighter-rouge&quot;&gt;var link = function(height = 50, color = 'red', url = 'http://azat.co') {...}&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;模板对象：&lt;code class=&quot;highlighter-rouge&quot;&gt;var name = 'Your name is ${first} ${last}.' &lt;/code&gt;; 反引号&lt;/li&gt;
   &lt;li&gt;多行字符串：反引号&lt;/li&gt;
@@ -179,10 +328,30 @@
       &lt;li&gt;JS是解释型语言，边加载边运行，后续脚本运行时，这些脚本所依赖的一切必须已经加载完毕；JS脚本加载时会阻塞浏览器，如果加载的JS很多很大，浏览器会卡住，带来很差的用户体验；通过调整script标签顺序可以修改JS模块之间的依赖，然而当模块很多时，这种做法就不可用了。&lt;/li&gt;
       &lt;li&gt;AMD模块（RequireJS）、CommonJS模块（Node.js）、CMD(SeaJS)&lt;/li&gt;
       &lt;li&gt;导出export&lt;/li&gt;
-      &lt;li&gt;导入import&lt;/li&gt;
+      &lt;li&gt;
+        &lt;h2 id=&quot;heading-导入import&quot;&gt;导入import&lt;/h2&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="ES6" /><summary type="html">ECMAScript 2015（ES6）的十大特征 默认参数：var link = function(height = 50, color = 'red', url = 'http://azat.co') {...} 模板对象：var name = 'Your name is ${first} ${last}.' ; 反引号 多行字符串：反引号 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。</summary></entry><entry><title type="html">前端开发流程</title><link href="http://localhost:4000/blog/2017/05/28/front-dev/" rel="alternate" type="text/html" title="前端开发流程" /><published>2017-05-28T07:00:00+08:00</published><updated>2017-05-28T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/28/front-dev</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/28/front-dev/">&lt;h1 id=&quot;heading-开发流程&quot;&gt;开发流程&lt;/h1&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;heading-es7拓展&quot;&gt;ES7拓展&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;求幂运算符（**）&lt;/li&gt;
+  &lt;li&gt;Array.prototype.includes()方法&lt;/li&gt;
+  &lt;li&gt;函数作用域中严格模式的变更&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;heading-es8拓展&quot;&gt;ES8拓展&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Object.entries 和 Object.values&lt;/li&gt;
+  &lt;li&gt;String.prototype.padStart / String.prototype.padEnd&lt;/li&gt;
+  &lt;li&gt;Object.getOwnPropertyDeors&lt;/li&gt;
+  &lt;li&gt;异步函数(Async functions)&lt;/li&gt;
+  &lt;li&gt;共享内存与原子化(atomics)&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="ES6" /><summary type="html">ECMAScript 2015（ES6）的十大特征 https://www.jianshu.com/p/287e0bb867ae 默认参数：var link = function(height = 50, color = 'red', url = 'http://azat.co') {...} 模板对象：var name = 'Your name is ${first} ${last}.' ; 反引号 多行字符串：反引号 解构赋值：自动解析数组或对象中的值，不用以对象的方式返回。 增强的对象字面量：实现继承，可以直接在对象字面量里面定义原型，不用再用function 关键字。</summary></entry><entry><title type="html">前端开发流程</title><link href="http://localhost:4000/blog/2017/05/28/front-dev/" rel="alternate" type="text/html" title="前端开发流程" /><published>2017-05-28T07:00:00+08:00</published><updated>2017-05-28T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/28/front-dev</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/28/front-dev/">&lt;h1 id=&quot;heading-开发流程&quot;&gt;开发流程&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;Front-end Integrated Solution（前端集成解决方案）&lt;/li&gt;
   &lt;li&gt;规范与设计&lt;/li&gt;
@@ -525,357 +694,4 @@
 
     &lt;p&gt;&lt;img src=&quot;/assets/images/2017/k3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Framework" /><summary type="html">Node.js 并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。 nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。 Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。 Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。</summary></entry><entry><title type="html">HTTP状态码</title><link href="http://localhost:4000/blog/2017/05/23/http-state/" rel="alternate" type="text/html" title="HTTP状态码" /><published>2017-05-23T07:00:00+08:00</published><updated>2017-05-23T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/23/http-state</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/23/http-state/">&lt;p&gt;&lt;img src=&quot;/assets/images/2017/http.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;heading-1&quot;&gt;1**&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;100 (Continue/继续)：如果服务器收到头信息中带有100-continue的请求，这是指客户端询问是否可以在后续的请求中发送附件。在这种情况下，服务器用100(SC_CONTINUE)允许客户端继续或用417 (Expectation Failed)告诉客户端不同意接受附件。&lt;/li&gt;
-  &lt;li&gt;101 (Switching Protocols/转换协议)：指服务器将按照其头信息变为一个不同的协议。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-2&quot;&gt;2**&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;200 (OK/正常)：一切正常。一般用于相应GET和POST请求。这个状态码对servlet是缺省的；如果没有调用setStatus方法的话，就会得到200。&lt;/li&gt;
-  &lt;li&gt;201 (Created/已创建)：表示服务器在请求的响应中建立了新文档；应在定位头信息中给出它的URL。&lt;/li&gt;
-  &lt;li&gt;202 (Accepted/接受)：)告诉客户端请求正在被执行，但还没有处理完。&lt;/li&gt;
-  &lt;li&gt;203 (Non-Authoritative Information/非官方信息)：表示文档被正常的返回，但是由于正在使用的是文档副本所以某些响应头信息可能不正确。&lt;/li&gt;
-  &lt;li&gt;204 (No Content/无内容)：无内容。服务器成功处理，但未返回内容。在未更新网页的情况下，可确保浏览器继续显示当前文档&lt;/li&gt;
-  &lt;li&gt;205 (Reset Content/重置内容)：重置内容。服务器处理成功，用户终端（例如：浏览器）应重置文档视图。&lt;/li&gt;
-  &lt;li&gt;206 (Partial Content/局部内容)：部分内容。服务器成功处理了部分GET请求&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-3&quot;&gt;3**&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;300 (Multiple Choices/多重选择)：多种选择。请求的资源可包括多个位置，相应可返回一个资源特征与地址的列表用于用户终端（例如：浏览器）选择&lt;/li&gt;
-  &lt;li&gt;301 (Moved Permanently)：永久移动。请求的资源已被永久的移动到新URI，返回信息会包括新的URI，浏览器会自动定向到新URI。今后任何新的请求都应使用新的URI代替&lt;/li&gt;
-  &lt;li&gt;302 (Found/找到)：临时移动。与301类似。但资源只是临时被移动。客户端应继续使用原有URI&lt;/li&gt;
-  &lt;li&gt;303 (See Other/参见其他信息)：查看其它地址。与301类似。使用GET和POST请求查看&lt;/li&gt;
-  &lt;li&gt;304 (Not Modified/为修正)：未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源。客户端通常会缓存访问过的资源，通过提供一个头信息指出客户端希望只返回在指定日期之后修改的资源&lt;/li&gt;
-  &lt;li&gt;305 (Use Proxy/使用代理)：使用代理。所请求的资源必须通过代理访问&lt;/li&gt;
-  &lt;li&gt;307 (Temporary Redirect/临时重定向)：临时重定向。与302类似。使用GET请求重定向。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-4&quot;&gt;4**&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;400 (Bad Request/错误请求)：客户端请求的语法错误，服务器无法理解；&lt;/li&gt;
-  &lt;li&gt;401 (Unauthorized/未授权)：请求要求用户的身份认证&lt;/li&gt;
-  &lt;li&gt;403 (Forbidden/禁止)：服务器理解请求客户端的请求，但是拒绝执行此请求&lt;/li&gt;
-  &lt;li&gt;404 (Not Found/未找到)：服务器无法根据客户端的请求找到资源（网页）。&lt;/li&gt;
-  &lt;li&gt;405 (Method Not Allowed/方法未允许)：客户端请求中的方法被禁止&lt;/li&gt;
-  &lt;li&gt;406 (Not Acceptable/无法访问)：服务器无法根据客户端请求的内容特性完成请求&lt;/li&gt;
-  &lt;li&gt;407 (Proxy Authentication Required/代理服务器认证要求)：请求要求代理的身份认证，与401类似，但请求者应当使用代理进行授权&lt;/li&gt;
-  &lt;li&gt;408 (Request Timeout/请求超时)：服务器等待客户端发送的请求时间过长，超时&lt;/li&gt;
-  &lt;li&gt;409 (Conflict/冲突) 服务器完成客户端的PUT请求是可能返回此代码，服务器处理请求时发生了冲突&lt;/li&gt;
-  &lt;li&gt;410 (Gone/已经不存在)：客户端请求的资源已经不存在。&lt;/li&gt;
-  &lt;li&gt;411 (Length Required/需要数据长度)：服务器无法处理客户端发送的不带Content-Length的请求信息&lt;/li&gt;
-  &lt;li&gt;412 (Precondition Failed/先决条件错误)：客户端请求信息的先决条件错误&lt;/li&gt;
-  &lt;li&gt;413 (Request Entity Too Large/请求实体过大)：由于请求的实体过大，服务器无法处理，因此拒绝请求。&lt;/li&gt;
-  &lt;li&gt;414 (Request URI Too Long/请求URI过长)：请求的URI过长（URI通常为网址），服务器无法处理&lt;/li&gt;
-  &lt;li&gt;415 (Unsupported Media Type/不支持的媒体格式)：服务器无法处理请求附带的媒体格式&lt;/li&gt;
-  &lt;li&gt;416 (Requested Range Not Satisfiable/请求范围无法满足)：客户端请求的范围无效&lt;/li&gt;
-  &lt;li&gt;417 (Expectation Failed/期望失败)：服务器无法满足Expect的请求头信息&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-5&quot;&gt;5**&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;500 (Internal Server Error/内部服务器错误)：服务器内部错误，无法完成请求&lt;/li&gt;
-  &lt;li&gt;501 (Not Implemented/未实现)：服务器不支持请求的功能，无法完成请求&lt;/li&gt;
-  &lt;li&gt;502 (Bad Gateway/错误的网关)：接收服务器接收到远端服务器的错误响应&lt;/li&gt;
-  &lt;li&gt;503 (Service Unavailable/服务无法获得)：服务器由于在维护或已经超载而无法响应。&lt;/li&gt;
-  &lt;li&gt;504 (Gateway Timeout/网关超时)：接收服务器没有从远端服务器得到及时的响应。&lt;/li&gt;
-  &lt;li&gt;505 (HTTP Version Not Supported/不支持的 HTTP 版本)：&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="HTTP" /><category term="State" /><summary type="html"></summary></entry><entry><title type="html">HTTP基础</title><link href="http://localhost:4000/blog/2017/05/22/http/" rel="alternate" type="text/html" title="HTTP基础" /><published>2017-05-22T07:00:00+08:00</published><updated>2017-05-22T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/22/http</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/22/http/">&lt;h1 id=&quot;heading-url与uri的区别&quot;&gt;URL与URI的区别。&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;uniform resource location 统一资源定位符&lt;/li&gt;
-  &lt;li&gt;uniform resource identifier 统一资源标识符&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-请求报文&quot;&gt;请求报文&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](/assets/images/2017/HTTP1.jpg)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;heading-响应报文&quot;&gt;响应报文&lt;/h1&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![2](/assets/images/2017/HTTP2.jpg)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-get与post的区别&quot;&gt;GET与POST的区别。&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;使用目标：POST与GET都用于获取信息，但是GET方式仅仅是查询，并不对服务器上的内容产生任何作用结果；每次GET的内容都是相同的。POST则常用于发送一定的内容进行某些修改操作。&lt;/li&gt;
-  &lt;li&gt;大小限制：由于不同的浏览器对URL的长度大小有一定的字符限制，因此由于GET方式放在URL的首部中，自然也跟着首先，但是具体的大小要依浏览器而定。POST方式则是把内容放在报文内容中，因此只要报文的内容没有限制，它的大小就没有限制。&lt;/li&gt;
-  &lt;li&gt;安全性：上面也说了GET是直接添加到URL后面的，直接就可以在URL中看到内容。而POST是放在报文内部的，用户无法直接看到。&lt;/li&gt;
-  &lt;li&gt;GET用于获取某个内容，POST用于提交某种数据请求。按照使用场景来说，一般用户注册的内容属于私密的，这应该使用POST方式；而针对某一内容的查询，为了快速的响应，可以使用GET方式。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-cookie&quot;&gt;Cookie&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Cookie是一种由服务器端确定，并保存在客户端浏览器中的内容。这样，就不需要每次都添加用户的相关信息，请求会自动添加cookie中对应的内容。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/HTTP3.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/HTTP4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-持久化&quot;&gt;持久化&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果每次想要发送http报文都需要经过这个过程，那么时间大部分都会消耗在建立和断开连接的过程中。因此http中使用了connection属性，用于指定连接的方式。　当设置成keep-alive，如上面所示的百度的http头部信息所示，就会建立一条持久化的连接。不需要每次都建立连接，再中断。&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/HTTP5.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/HTTP6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-管道化&quot;&gt;管道化&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;如果一个http请求，请求了大量的图片等大文件，那么其他的http请求怎么办呢？http可以一次发送多个http请求，然后等待响应连接。不需要排队等候，这样就加快了http的响应时间。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-内容编码&quot;&gt;内容编码&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;由于某些报文的内容过大，因此在传输时，为了减少传输的时间，会采取一些压缩的措施。如上面的报文信息中，Accept-Encoding就定义了内容编码的格式：gzip&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-其他传输方式&quot;&gt;其他传输方式&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;PUT：传输文件，在请求报文的主体中包含文件内容，然后保存到请求URL指定的位置，有安全问题；&lt;/li&gt;
-  &lt;li&gt;HEAD：获得报文首部，不返回报文主体部分，用于确认URI的有效性及资源更新的日期时间等；&lt;/li&gt;
-  &lt;li&gt;DELETE：删除文件，DELETE是与PUT相反的方法，是按请求URI删除指定的资源&lt;/li&gt;
-  &lt;li&gt;OPYIONS：询问支持的方法，用来查询针对请求URI指定的资源支持的方法&lt;/li&gt;
-  &lt;li&gt;TRACE：追踪路径，让web服务器端将之前的请求通信还回给客户端的方法，发送请求时，在Max-Frowards首部字段中填入数值，每经过一个服务器端就-1，当数值为0时，停止传输，最后收到服务器返回状态码200 OK的响应&lt;/li&gt;
-  &lt;li&gt;CONNECT：要求采用隧道协议连接代理，该方法要求在于代理服务器通信时建立隧道，实现用隧道协议进行TCP通信，主要使用SSL（安全套接层）和TLS（传输层安全）协议把通信内容加密后经过网络传输。&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="HTTP" /><summary type="html">URL与URI的区别。 uniform resource location 统一资源定位符 uniform resource identifier 统一资源标识符</summary></entry><entry><title type="html">HTML基础</title><link href="http://localhost:4000/blog/2017/05/21/html/" rel="alternate" type="text/html" title="HTML基础" /><published>2017-05-21T07:00:00+08:00</published><updated>2017-05-21T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/21/html</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/21/html/">&lt;h1 id=&quot;heading-doctype&quot;&gt;Doctype&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;标准模式与兼容模式各有什么区别?
-    &lt;ul&gt;
-      &lt;li&gt;&amp;lt;!DOCTYPE&amp;gt;声明位于位于HTML文档中的第一行，处于&amp;lt;html&amp;gt;标签之前，告知浏览器的解析器用什么文档标准解析这个文档。&lt;/li&gt;
-      &lt;li&gt;DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;HTML5 为什么只需要写 &amp;lt;!DOCTYPE HTML&amp;gt;?
-    &lt;ul&gt;
-      &lt;li&gt;HTML5 不基于标准通用标记语言SGML(Standard Generalized Markup language)，因此不需要对DTD(Document Type Definition)进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；&lt;/li&gt;
-      &lt;li&gt;而HTML4.01基于SGML，所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-标签元素&quot;&gt;标签元素&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;行内元素有哪些？块级元素有哪些？空(void)元素有那些？
-    &lt;ul&gt;
-      &lt;li&gt;CSS规范规定，每个元素都有display属性，确定该元素的类型，每个元素都有默认的display值，如div的display默认值为&lt;code class=&quot;highlighter-rouge&quot;&gt;block&lt;/code&gt;，则为块级元素；span默认display属性值为&lt;code class=&quot;highlighter-rouge&quot;&gt;inline&lt;/code&gt;，是行内元素。&lt;/li&gt;
-      &lt;li&gt;行内元素有：&lt;code class=&quot;highlighter-rouge&quot;&gt;a&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;span&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;select&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;块级元素有：&lt;code class=&quot;highlighter-rouge&quot;&gt;div&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ul&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;ol&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;li&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;dl&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;dt&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;dd&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;h1&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;h2&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;h3&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;h4&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;常见的空元素：&lt;code class=&quot;highlighter-rouge&quot;&gt;br&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;hr&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;img&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;input&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;link&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;meta&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;鲜为人知的是：&lt;code class=&quot;highlighter-rouge&quot;&gt;area&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;base&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;col&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;command&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;embed&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;keygen&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;param&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;source&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;track&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;wbr&lt;/code&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-页面导入样式时使用link和import有什么区别&quot;&gt;页面导入样式时，使用link和@import有什么区别？&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;link属于XHTML标签，除了加载CSS外，还能用于定义RSS，定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS；&lt;/li&gt;
-  &lt;li&gt;页面被加载的时，link会同时被加载，而@import引用的CSS会等到页面被加载完再加载；&lt;/li&gt;
-  &lt;li&gt;import是CSS2.1 提出的，只在IE5以上才能被识别，而link是XHTML标签，无兼容问题。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-浏览器内核&quot;&gt;浏览器内核&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;主要分成两部分：渲染引擎(layout engineer或Rendering Engine)和JS引擎。&lt;/li&gt;
-  &lt;li&gt;渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核。&lt;/li&gt;
-  &lt;li&gt;JS引擎则：解析和执行javascript来实现网页的动态效果。最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎。&lt;/li&gt;
-  &lt;li&gt;常见的浏览器内核有哪些？
-    &lt;ul&gt;
-      &lt;li&gt;Trident内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称MSHTML]；&lt;/li&gt;
-      &lt;li&gt;Gecko内核：Netscape6及以上版本，FF,MozillaSuite/SeaMonkey等；&lt;/li&gt;
-      &lt;li&gt;Presto内核：Opera7及以上。[Opera内核原为：Presto，现为：Blink;]；&lt;/li&gt;
-      &lt;li&gt;Webkit内核：Safari,Chrome等。 [ Chrome的：Blink（WebKit的分支）]&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-html5新特性&quot;&gt;HTML5新特性&lt;/h1&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/images/2017/h1.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;用webWorker来处理一些比较耗时的计算
-    &lt;ul&gt;
-      &lt;li&gt;postMessage(data): 子线程与主线程之间互相通信使用方法，传递的data为任意值。&lt;/li&gt;
-      &lt;li&gt;terminate()：主线程中终止worker，此后无法再利用其进行消息传递。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-
-&lt;h1 id=&quot;heading-html5的离线储存&quot;&gt;HTML5的离线储存&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。&lt;/li&gt;
-  &lt;li&gt;原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。&lt;/li&gt;
-  &lt;li&gt;如何使用
-    &lt;ul&gt;
-      &lt;li&gt;页面头部像下面一样加入一个manifest的属性；&lt;/li&gt;
-      &lt;li&gt;在cache.manifest文件的编写离线存储的资源；&lt;/li&gt;
-      &lt;li&gt;在离线状态时，操作window.applicationCache进行需求实现。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;CACHE MANIFEST
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;v0.11
-CACHE:
-  js/app.js
-  css/style.css
-NETWORK:
-  resourse/logo.png
-FALLBACK:
-  //offline.html
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-浏览器对html5的离线储存资源进行管理和加载&quot;&gt;浏览器对HTML5的离线储存资源进行管理和加载&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件。&lt;/li&gt;
-  &lt;li&gt;如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。&lt;/li&gt;
-  &lt;li&gt;如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。离线的情况下，浏览器就直接使用离线存储的资源。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-cookiessessionstorage-和-localstorage&quot;&gt;cookies、sessionStorage 和 localStorage&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密），cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递。sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。&lt;/li&gt;
-  &lt;li&gt;存储大小：cookie数据大小不能超过4k。sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。&lt;/li&gt;
-  &lt;li&gt;有期时间：localStorage：存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；sessionStorage：数据在当前浏览器窗口关闭后自动删除。Cookie：设置的cookie过期时间之前一直有效，即使窗口或浏览器关闭。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-iframe&quot;&gt;Iframe&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;window 的 onload 事件需要在所有 iframe 加载完毕后(包含里面的元素)才会触发。iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。&lt;/li&gt;
-  &lt;li&gt;搜索引擎的检索程序无法解读这种页面，不利于SEO(Search Engine Optimization);&lt;/li&gt;
-  &lt;li&gt;如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以绕开以上两个问题。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-label&quot;&gt;Label&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;Label标签来定义表单控制间的关系，当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;label for=&quot;Name&quot;&amp;gt;Number:&amp;lt;/label&amp;gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;input type=“text“name=&quot;Name&quot; id=&quot;Name&quot;/&amp;gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;label&amp;gt;Date:&amp;lt;input type=&quot;text&quot; name=&quot;B&quot;/&amp;gt;&amp;lt;/label&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-html5的form关闭自动完成功能&quot;&gt;HTML5的form关闭自动完成功能&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;给不想要提示的 form 或某个 input 设置为 &lt;code class=&quot;highlighter-rouge&quot;&gt;autocomplete=off&lt;/code&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-浏览器内多个标签页之间的通信&quot;&gt;浏览器内多个标签页之间的通信&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;WebSocket、SharedWorker；&lt;/li&gt;
-  &lt;li&gt;可以调用localstorge、cookies等本地存储方式；&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;localstorge另一个浏览上下文里被添加、修改或删除时，它会触发一个事件，我们通过监听事件，控制它的值来进行页面信息通信；&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h2.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h3.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;webSocket：ajax轮询 需要服务器有很快的处理速度和资源。（速度）long poll 需要有很高的并发，也就是说同时接待客户的能力。（场地大小）就变成了这样，只需要经过一次HTTP请求，就可以做到源源不断的信息传送了。（在程序设计中，这种设计叫做回调，即：你有信息了再来通知我，而不是我傻乎乎的每次跑来问你 ）&lt;/li&gt;
-  &lt;li&gt;如何兼容低浏览器？(阿里) Adobe Flash Socket 、ActiveX HTMLFile (IE) 、基于 multipart 编码发送 XHR 、基于长轮询的 XHR&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-页面可见性page-visibility-api&quot;&gt;页面可见性（Page Visibility API）&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h4.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-在页面上实现一个圆形的可点击区域&quot;&gt;在页面上实现一个圆形的可点击区域&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;map+area或者svg；&lt;/li&gt;
-  &lt;li&gt;border-radius；&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h5.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h6.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h7.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-画线&quot;&gt;画线&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;div style=&quot;height:1px;overflow:hidden;background:red&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-网页验证码&quot;&gt;网页验证码&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水；&lt;/li&gt;
-  &lt;li&gt;有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;heading-title与h1b与strongi与em的区别&quot;&gt;title与h1、b与strong、i与em的区别&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;属性没有明确意义只表示是个标题，&lt;code class=&quot;highlighter-rouge&quot;&gt;H1&lt;/code&gt;则表示层次明确的标题，对页面信息的抓取也有很大的影响；&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;strong&amp;gt;&lt;/code&gt;会重读，而&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;B&amp;gt;&lt;/code&gt;是展示强调内容。&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;i&lt;/code&gt;内容展示为斜体，&lt;code class=&quot;highlighter-rouge&quot;&gt;em&lt;/code&gt;表示强调的文本；&lt;/li&gt;
-  &lt;li&gt;Physical Style Elements，自然样式标签b, i, u, s, pre；&lt;/li&gt;
-  &lt;li&gt;Semantic Style Elements，语义样式标签strong, em, ins, del, code；&lt;/li&gt;
-  &lt;li&gt;应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-canvas与svg&quot;&gt;canvas与svg&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;canvas：元素本身并没有绘制能力（它仅仅是图形的容器），必须使用脚本来完成实际的绘图任务。Canvas提供的功能更原始，适合像素处理，动态渲染和大数据量绘制。&lt;/li&gt;
-  &lt;li&gt;SVG可缩放矢量图形（Scalable Vector Graphics）：基于可扩展标记语言（XML），使用XML文档描述来绘图。SVG功能更完善，适合静态图片展示，高保真文档查看和打印的应用场景。
- &lt;img src=&quot;/assets/images/2017/h8.jpg&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;hr /&gt;
-&lt;h1 id=&quot;heading-缓存清除&quot;&gt;缓存清除&lt;/h1&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;如何处理缓存，如何清除缓存：浏览器的缓存，有的时候我们需要它来提高网站性能和浏览器速度；但有的时候我们又不得不清除缓存，因为缓存中可能包含一些错误的数据，因此，缓存比较适用于较少更新的网站。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;meta方法&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h9.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;清理form表单的临时缓存：&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;body onLoad=&quot;javascript:document.yourFormName.reset()&quot;&amp;gt;&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;jquery ajax清除浏览器缓存&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;用ajax请求服务器最新文件，并加上请求头&lt;code class=&quot;highlighter-rouge&quot;&gt;If-Modified-Since&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control&lt;/code&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;/assets/images/2017/h10.jpg&quot; alt=&quot;&quot; /&gt;&lt;img src=&quot;/assets/images/2017/h11.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;直接用cache:false&lt;/li&gt;
-  &lt;li&gt;用随机数：URL 参数后加上 &lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;?ran=&quot; + Math.random()&lt;/code&gt;;&lt;/li&gt;
-  &lt;li&gt;用php后端清理：在服务端加 &lt;code class=&quot;highlighter-rouge&quot;&gt;header(&quot;Cache-Control: no-cache, must-revalidate&quot;)&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Html" /><summary type="html">Doctype 标准模式与兼容模式各有什么区别? &amp;lt;!DOCTYPE&amp;gt;声明位于位于HTML文档中的第一行，处于&amp;lt;html&amp;gt;标签之前，告知浏览器的解析器用什么文档标准解析这个文档。 DOCTYPE不存在或格式不正确会导致文档以兼容模式呈现。标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作。</summary></entry></feed>
+&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="Framework" /><summary type="html">Node.js 并不是一门新的语言，与Java，PHP开发语言的平台也是不相同的，虽然他是JavaScript但是它并不是JavaScript的框架。 nodejs是让JavaScript运行在服务器端的开发平台。当一种事务在一个领域独孤求败的时候就会想着进入另外一个领域，JavaScript已经在近几年已经一统的前端的江湖，所以已经开始进入服务端的领域。 Node.js是基于Chrome JavaScript运行时建立的一个平台，使用C++编写的，实际上它是对Google Chrome V8引擎进行了封装，它主要用于创建快速的、可扩展的网络应用。 Node.js采用事件驱动和非阻塞I/O模型，使其变得轻微和高效，非常适合构建运行在分布式设备的数据密集型实时应用。</summary></entry></feed>
