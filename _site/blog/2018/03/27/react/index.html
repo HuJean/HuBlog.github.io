@@ -189,27 +189,77 @@
 
 <hr />
 
-<h1 id="heading-react">React</h1>
+<h1 id="heading-react基础">React基础</h1>
 <ul>
-  <li>JSX</li>
+  <li>JSX
+    <ul>
+      <li>JSX(JavaScript XML)是js内定义的一套XML语法，可以解析出目标js代码,颠覆传统js写法；</li>
+      <li>不能直接在浏览器中使用，需要JSXTransformer编译成React.CreateElement方法；</li>
+      <li>webpack+babel搭建完整的开发环境</li>
+    </ul>
+  </li>
   <li>Virtual DOM</li>
   <li>组件</li>
-  <li>工具: webpack、babel、ESLint</li>
+  <li>
+    <p>工具: webpack、babel、ESLint</p>
+  </li>
+  <li>虚拟DOM
+    <ul>
+      <li>虚拟元素</li>
+      <li>比较差异</li>
+    </ul>
+  </li>
+  <li>组件化开发
+    <ul>
+      <li>props属性</li>
+      <li>state状态</li>
+      <li>组件的生命周期</li>
+    </ul>
+  </li>
 </ul>
 
-<h2 id="heading-虚拟dom">虚拟DOM</h2>
+<hr />
 
-<h2 id="heading-组件化开发">组件化开发</h2>
+<h1 id="heading-flux架构">Flux架构</h1>
+<ul>
+  <li>单向数据流
+    <ul>
+      <li>Action：描述一个行为的对象</li>
+      <li>Dispatcher：信息分拨中心，dispatch方法执行一个action，rejister方法注册回调处理store的内容</li>
+      <li>Store：处理完成之后，emit方法发送change广播，告知store已经发生了变化</li>
+      <li>View：监听change事件，调用setState来更新UI</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<h1 id="heading-flux">Flux</h1>
+<h1 id="heading-redux">Redux</h1>
+<ul>
+  <li>三大特性
+    <ul>
+      <li>单一数据源：整个应用的state存储在一个JS对象中，即store</li>
+      <li>state是只读的：不能在state上面直接修改数据，唯一的方法就是触发action</li>
+      <li>使用纯函数执行修改：reducer是纯函数，接受先前的state和action，输出新的state</li>
+    </ul>
+  </li>
+  <li>数据流
+    <ul>
+      <li>单向数据流，可以预测JavaScript状态容器</li>
+      <li>middleware中间件</li>
+    </ul>
+  </li>
+</ul>
 
 <hr />
 
-<p>#Redux</p>
-
-<hr />
+<h1 id="heading-react源码学习">React源码学习</h1>
+<ul>
+  <li>ReactElement</li>
+  <li>ReactComponent</li>
+  <li>ReactClass</li>
+  <li></li>
+</ul>
 
 
                     </div>

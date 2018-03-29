@@ -1,10 +1,12 @@
 ---
 layout: post
-title: GraphQL学习笔记
+title: 前端学习笔记
 date: '2018-03-28 08:00:00'
 categories: [前端工具]
-tags: [GraphQL]
+tags: [GraphQL, Google Analytics]
 ---
 
 GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
 GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。
+
+Google Analytics(GA)可以监控网站十分之多的数据，是每个网站必备的分析工具。

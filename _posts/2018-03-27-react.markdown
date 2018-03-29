@@ -23,23 +23,52 @@ tags: [React]
 
 ---
 
-# React
+# React基础
   * JSX
+    * JSX(JavaScript XML)是js内定义的一套XML语法，可以解析出目标js代码,颠覆传统js写法；
+    * 不能直接在浏览器中使用，需要JSXTransformer编译成React.CreateElement方法；
+    * webpack+babel搭建完整的开发环境
   * Virtual DOM
   * 组件
   * 工具: webpack、babel、ESLint
 
-## 虚拟DOM
+  * 虚拟DOM
+    * 虚拟元素
+    * 比较差异
 
-## 组件化开发
+  * 组件化开发
+    * props属性
+    * state状态
+    * 组件的生命周期
+  
+---
+
+# Flux架构
+  * 单向数据流
+    * Action：描述一个行为的对象
+    * Dispatcher：信息分拨中心，dispatch方法执行一个action，rejister方法注册回调处理store的内容
+    * Store：处理完成之后，emit方法发送change广播，告知store已经发生了变化
+    * View：监听change事件，调用setState来更新UI
 
 ---
 
-# Flux
+# Redux
+  * 三大特性
+    * 单一数据源：整个应用的state存储在一个JS对象中，即store
+    * state是只读的：不能在state上面直接修改数据，唯一的方法就是触发action
+    * 使用纯函数执行修改：reducer是纯函数，接受先前的state和action，输出新的state
+
+  * 数据流
+    * 单向数据流，可以预测JavaScript状态容器
+    * middleware中间件
 
 ---
 
-#Redux
+# React源码学习
+  * ReactElement
+  * ReactComponent
+  * ReactClass
+  * 
 
----
+
 

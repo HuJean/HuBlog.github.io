@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-29T10:01:45+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">GraphQL学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/GraphQL/" rel="alternate" type="text/html" title="GraphQL学习笔记" /><published>2018-03-28T08:00:00+08:00</published><updated>2018-03-28T08:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/GraphQL</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/GraphQL/">&lt;p&gt;GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
-GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。&lt;/p&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="GraphQL" /><summary type="html">GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。 GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。</summary></entry><entry><title type="html">Babel学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/Babel/" rel="alternate" type="text/html" title="Babel学习笔记" /><published>2018-03-28T07:00:00+08:00</published><updated>2018-03-28T07:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/Babel</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/Babel/">&lt;p&gt;Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2018-03-29T13:44:44+08:00</updated><id>http://localhost:4000/</id><title type="html">胡静</title><subtitle>Talk less and code more.</subtitle><author><name>Dada</name><email>hujingdada@126.com</email></author><entry><title type="html">前端学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/GraphQL/" rel="alternate" type="text/html" title="前端学习笔记" /><published>2018-03-28T08:00:00+08:00</published><updated>2018-03-28T08:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/GraphQL</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/GraphQL/">&lt;p&gt;GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
+GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。&lt;/p&gt;
+
+&lt;p&gt;Google Analytics(GA)可以监控网站十分之多的数据，是每个网站必备的分析工具。&lt;/p&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="GraphQL" /><category term="Google Analytics" /><summary type="html">GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。 GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。</summary></entry><entry><title type="html">Babel学习笔记</title><link href="http://localhost:4000/blog/2018/03/28/Babel/" rel="alternate" type="text/html" title="Babel学习笔记" /><published>2018-03-28T07:00:00+08:00</published><updated>2018-03-28T07:00:00+08:00</updated><id>http://localhost:4000/blog/2018/03/28/Babel</id><content type="html" xml:base="http://localhost:4000/blog/2018/03/28/Babel/">&lt;p&gt;Babel的功能非常纯粹，以字符串的形式将源代码传给它，它就会返回一段新的代码字符串，既不会运行你的代码，也不会将多个代码打包到一起，只是个编译器，输入语言是ES6+，编译目标语言是ES5。&lt;/p&gt;
 
 &lt;h1 id=&quot;heading-基本使用&quot;&gt;基本使用&lt;/h1&gt;
 &lt;ul&gt;
@@ -126,27 +128,77 @@ GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠�
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;heading-react&quot;&gt;React&lt;/h1&gt;
+&lt;h1 id=&quot;heading-react基础&quot;&gt;React基础&lt;/h1&gt;
 &lt;ul&gt;
-  &lt;li&gt;JSX&lt;/li&gt;
+  &lt;li&gt;JSX
+    &lt;ul&gt;
+      &lt;li&gt;JSX(JavaScript XML)是js内定义的一套XML语法，可以解析出目标js代码,颠覆传统js写法；&lt;/li&gt;
+      &lt;li&gt;不能直接在浏览器中使用，需要JSXTransformer编译成React.CreateElement方法；&lt;/li&gt;
+      &lt;li&gt;webpack+babel搭建完整的开发环境&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Virtual DOM&lt;/li&gt;
   &lt;li&gt;组件&lt;/li&gt;
-  &lt;li&gt;工具: webpack、babel、ESLint&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;工具: webpack、babel、ESLint&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;虚拟DOM
+    &lt;ul&gt;
+      &lt;li&gt;虚拟元素&lt;/li&gt;
+      &lt;li&gt;比较差异&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;组件化开发
+    &lt;ul&gt;
+      &lt;li&gt;props属性&lt;/li&gt;
+      &lt;li&gt;state状态&lt;/li&gt;
+      &lt;li&gt;组件的生命周期&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&quot;heading-虚拟dom&quot;&gt;虚拟DOM&lt;/h2&gt;
+&lt;hr /&gt;
 
-&lt;h2 id=&quot;heading-组件化开发&quot;&gt;组件化开发&lt;/h2&gt;
+&lt;h1 id=&quot;heading-flux架构&quot;&gt;Flux架构&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;单向数据流
+    &lt;ul&gt;
+      &lt;li&gt;Action：描述一个行为的对象&lt;/li&gt;
+      &lt;li&gt;Dispatcher：信息分拨中心，dispatch方法执行一个action，rejister方法注册回调处理store的内容&lt;/li&gt;
+      &lt;li&gt;Store：处理完成之后，emit方法发送change广播，告知store已经发生了变化&lt;/li&gt;
+      &lt;li&gt;View：监听change事件，调用setState来更新UI&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h1 id=&quot;heading-flux&quot;&gt;Flux&lt;/h1&gt;
+&lt;h1 id=&quot;heading-redux&quot;&gt;Redux&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;三大特性
+    &lt;ul&gt;
+      &lt;li&gt;单一数据源：整个应用的state存储在一个JS对象中，即store&lt;/li&gt;
+      &lt;li&gt;state是只读的：不能在state上面直接修改数据，唯一的方法就是触发action&lt;/li&gt;
+      &lt;li&gt;使用纯函数执行修改：reducer是纯函数，接受先前的state和action，输出新的state&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;数据流
+    &lt;ul&gt;
+      &lt;li&gt;单向数据流，可以预测JavaScript状态容器&lt;/li&gt;
+      &lt;li&gt;middleware中间件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;#Redux&lt;/p&gt;
-
-&lt;hr /&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="React" /><summary type="html">模块化 RequireJS: 模块加载器，基于AMD规范; browserify: 基于CommonJS，服务端nodejs自带工具，使用require和module.exports构建项目; webpack: 前端模块打包工具，JS、CSS及其他所有模块管理;</summary></entry><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
+&lt;h1 id=&quot;heading-react源码学习&quot;&gt;React源码学习&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;ReactElement&lt;/li&gt;
+  &lt;li&gt;ReactComponent&lt;/li&gt;
+  &lt;li&gt;ReactClass&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Dada</name><email>hujingdada@126.com</email></author><category term="React" /><summary type="html">模块化 RequireJS: 模块加载器，基于AMD规范; browserify: 基于CommonJS，服务端nodejs自带工具，使用require和module.exports构建项目; webpack: 前端模块打包工具，JS、CSS及其他所有模块管理;</summary></entry><entry><title type="html">前端面试</title><link href="http://localhost:4000/blog/2017/05/30/front-interview/" rel="alternate" type="text/html" title="前端面试" /><published>2017-05-30T07:00:00+08:00</published><updated>2017-05-30T07:00:00+08:00</updated><id>http://localhost:4000/blog/2017/05/30/front-interview</id><content type="html" xml:base="http://localhost:4000/blog/2017/05/30/front-interview/">&lt;h1 id=&quot;heading-regexp&quot;&gt;RegExp&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;var expression = /pattern /flags&lt;/code&gt;&lt;/li&gt;
   &lt;li&gt;特殊标志（flag）：g 全局模式；i 不区分大小写；m 多行模式；&lt;/li&gt;
