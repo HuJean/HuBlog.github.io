@@ -14,6 +14,7 @@ tags: [Test]
     * 框架（针对JS）：Jasmine、Qunit、Sinon、Mocha
     * 工具：Client/Server 测试、基于网页的测试
   * 持续集成测试（Continuous integration）
+  
     * 持续不断的自动化测试新加入代码后的项目
     
 # 思考
