@@ -16,5 +16,6 @@ tags: [Test]
 
   * 持续集成测试（Continuous integration）
     * 持续不断的自动化测试新加入代码后的项目
+    * hhs
     * Travis
   
