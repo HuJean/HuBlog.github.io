@@ -1,23 +1,23 @@
 language: ruby
 rvm:
-  - 2.3.3
+- 2.3.3
 before_install:
-  - openssl aes-256-cbc -K $encrypted_ecabfac08d8e_key -iv $encrypted_ecabfac08d8e_iv
-    -in id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - echo -e "Host HuBlog.github.io\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+- openssl aes-256-cbc -K $encrypted_018830f1d3c3_key -iv $encrypted_018830f1d3c3_iv
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- echo -e "Host HuBlog.github.io\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 script:
-  - bundle install
-  - bundle exec jekyll build
+- bundle install
+- bundle exec jekyll build
 after_success:
-  - git clone https://github.com/HuJean/HuBlog.github.io.git
-  - cd HuBlog.github.io && rm -rf * && cp -r ../_site/* .
-  - git config user.name "hujing"
-  - git config user.email "hujingdada@126.com"
-  - git add --all .
-  - git commit -m "Travis CI Auto Builder"
-  - git push --force https://$DEPLOY_TOKEN@github.com/HuJean/HuBlog.github.io.git master
-  - ssh root@HuBlog.github.io.git "docker restart my_jekyll_1"
+- git clone https://github.com/HuJean/HuBlog.github.io.git
+- cd HuBlog.github.io && rm -rf * && cp -r ../_site/* .
+- git config user.name "hujing"
+- git config user.email "hujingdada@126.com"
+- git add --all .
+- git commit -m "Travis CI Auto Builder"
+- git push --force https://$DEPLOY_TOKEN@github.com/HuJean/HuBlog.github.io.git master
+- ssh root@HuBlog.github.io.git "docker restart my_jekyll_1"
 branches:
   only:
   - master
