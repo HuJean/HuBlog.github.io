@@ -6,7 +6,26 @@ categories: [前端工具]
 tags: [GraphQL, Google Analytics]
 ---
 
-GraphQL是一个用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
-GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。
+# GraphQL
+  * 用于API的查询语言，是一个使用基于类型系统来执行查询的服务端运行时（类型系统由你的数据定义）。
+  * GraphQL并没有和任何特定数据库或者存储引擎绑定，而是依靠你现有的代码和数据支撑。
 
-Google Analytics(GA)可以监控网站十分之多的数据，是每个网站必备的分析工具。
+---
+
+# Google Analytics(GA)
+  * 可以监控网站十分之多的数据，是每个网站必备的分析工具。
+  * 通过在网页中嵌入一段GA的JS代码，然后这段GA的JS代码会收集相关信息发送到Google Analytics的服务器以完成数据统计。
+  * _trackPageview：为了解决跨域问题，GA通过向Google服务器发起一张1像素的gif图片来发送相关的信息给Google的服务器。
+    * utmac：GA账号ID
+    * utmcc：当前页面GA所需的所有Cookie值，这个很关键
+    * utmcs: 浏览器的编码
+    * utmdt: 页面的标题
+    * utmn:  gif的随机ID，以免图片缓存
+    * utmr: 页面的referURL
+
+---
+
+# Immutable
+  * Immutable Data 就是一旦创建，就不能再被更改的数据。
+  * 对 Immutable 对象的任何修改或添加删除操作都会返回一个新的 Immutable 对象。
+  * 实现的原理是 Persistent Data Structure（持久化数据结构），也就是使用旧数据创建新数据时，要保证旧数据同时可用且不变。同时为了避免 deepCopy 把所有节点都复制一遍带来的性能损耗，Immutable 使用了 Structural Sharing（结构共享），即如果对象树中一个节点发生变化，只修改这个节点和受它影响的父节点，其它节点则进行共享。

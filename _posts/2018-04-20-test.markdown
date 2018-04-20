@@ -1,0 +1,19 @@
+---
+layout: post
+title: 前端测试
+date: '2018-04-20 08:52:00'
+categories: [前端框架]
+tags: [Test]
+---
+
+# 前端测试
+  * 单元测试（Unit Test）
+    * 就是一段用于测试一个模块或接口是否能达到预期结果的代码。
+    * TDD：Test Driven Development，测试驱动开发
+    * BDD：Behaviour Driven Development，行为驱动开发
+    * 框架（针对JS）：Jasmine、Qunit、Sinon、Mocha
+    * 工具：Client/Server 测试、基于网页的测试、
+  * 持续集成测试（Continuous integration）
+    * 持续不断的自动化测试新加入代码后的项目
+    * travis
+  
