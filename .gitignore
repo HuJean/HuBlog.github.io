@@ -1,1 +1,7 @@
 /node_modules/
+/.sass-cache/
+/_site/
+/lib/
+/src/
+baidu.js
+chromedriver
