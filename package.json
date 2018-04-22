@@ -1,0 +1,27 @@
+{
+  "name": "hublog.github.io",
+  "version": "1.0.0",
+  "description": "## Jekyll基本用法   * 安装     * Mac",
+  "main": "baidu.js",
+  "dependencies": {
+    "selenium-webdriver": "^4.0.0-alpha.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuJean/HuBlog.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuJean/HuBlog.github.io/issues"
+  },
+  "homepage": "https://github.com/HuJean/HuBlog.github.io#readme"
+}
