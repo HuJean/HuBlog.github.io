@@ -21,23 +21,29 @@ tags: [Network]
     * http发展
 
       ![]({{site.baseurl}}/assets/images/2018/http1.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/http2.jpg){:width="500"}
 
     * 域名解析
 
       ![]({{site.baseurl}}/assets/images/2018/dns.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/dnse.jpg){:width="500"}
 
     * TCP建立连接
 
       ![]({{site.baseurl}}/assets/images/2018/tcp1.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/tcp2.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/tcp3.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/tcp4.jpg){:width="500"}
 
     * IP协议
 
       ![]({{site.baseurl}}/assets/images/2018/ip1.jpg){:width="500"}
+
       ![]({{site.baseurl}}/assets/images/2018/ip2.jpg){:width="500"}
 
     * 数据链路层——帧
@@ -50,6 +56,7 @@ tags: [Network]
   * 前端攻击
 
     ![]({{site.baseurl}}/assets/images/2018/fs1.jpg){:width="500"}
+
     ![]({{site.baseurl}}/assets/images/2018/fs2.jpg){:width="500"}
 
   * 银行场景
