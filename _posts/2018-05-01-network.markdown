@@ -1,0 +1,62 @@
+---
+layout: post
+title: 计算机网络
+date: '2018-05-01 08:52:00'
+categories: [计算机基础]
+tags: [Network]
+---
+
+# 基础概念
+  * 层次划分
+    * OSI七层模型
+    * TCP/IP五层模型
+
+    ![]({{site.baseurl}}/assets/images/2018/networkmodel.jpg)
+
+  * 访问url的全过程 了解网络的工作原理
+    * 数据包装
+
+      ![]({{site.baseurl}}/assets/images/2018/networkurl.jpg)
+
+    * http发展
+
+      ![]({{site.baseurl}}/assets/images/2018/http1.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/http2.jpg)
+
+    * 域名解析
+
+      ![]({{site.baseurl}}/assets/images/2018/dns.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/dnse.jpg)
+
+    * TCP建立连接
+
+      ![]({{site.baseurl}}/assets/images/2018/tcp1.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/tcp2.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/tcp3.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/tcp4.jpg)
+
+    * IP协议
+
+      ![]({{site.baseurl}}/assets/images/2018/ip1.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/ip2.jpg)
+
+    * 数据链路层——帧
+
+      ![]({{site.baseurl}}/assets/images/2018/linklayer.jpg)
+
+---
+
+# 网络安全
+  * 前端攻击
+
+    ![]({{site.baseurl}}/assets/images/2018/fs1.jpg)
+    ![]({{site.baseurl}}/assets/images/2018/fs2.jpg)
+
+  * 银行场景
+
+    ![]({{site.baseurl}}/assets/images/2018/fsbank.jpg)
+
+  * 网络劫持
+
+    ![]({{site.baseurl}}/assets/images/2018/fs3.jpg)
+

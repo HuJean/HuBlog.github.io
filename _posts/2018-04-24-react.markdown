@@ -1,0 +1,46 @@
+---
+layout: post
+title: Webpack
+date: '2018-04-24 08:52:00'
+categories: [前端框架]
+tags: [Webpack]
+---
+
+# 配置文件
+  * entry：页面入口文件（html文件引入唯一的js文件）
+  * output：对应输出项配置 
+  * module：定义对模块的处理逻辑
+  * resolve：其他解决方案配置
+  * plugins：插件
+
+# html-webpack-plugin
+  * 为html文件中引入的外部资源如script、link，动态添加每次compile后的hash，防止引用缓存的外部文件问题。
+  * 可以生成创建html入口文件，比如单页面可以生成一个html文件入口，配置N个html-webpack-plugin可以生成N个页面入口。
+  * 不配置任何选项的html-webpack-plugin插件，默认将webpack中的entry配置所有入口thunk和extract-text-webpack-plugin抽取的css样式都插入到文件指定的位置。
+  * 配置项
+    * title: 生成的html文档的标题
+    * filename：输出文件的文件名称，默认为index.html
+    * template: 本地模板文件的位置
+
+    ~~~
+    this.options = _.extend({
+        template: path.join(__dirname, 'default_index.ejs'),
+        filename: 'index.html',
+        hash: false,
+        inject: true,
+        compile: true,
+        favicon: false,
+        minify: false,
+        cache: true,
+        showErrors: true,
+        chunks: 'all',
+        excludeChunks: [],
+        title: 'Webpack App',
+        xhtml: false
+    }, options);
+    ~~~
+
+# HotModuleReplacementPlugin
+  * 模块热替换(HMR)交换, 添加, 或者删除模块, 同时应用持续运行, 不需要页面刷新.
+  * 试验中，用于开发环境中
+
