@@ -11,17 +11,17 @@ tags: [Network]
     * OSI七层模型
     * TCP/IP五层模型
 
-    ![]({{site.baseurl}}/assets/images/2018/networkmodel.jpg)
+    ![]({{site.baseurl}}/assets/images/2018/networkmodel.jpg =200)
 
   * 访问url的全过程 了解网络的工作原理
     * 数据包装
 
-      ![]({{site.baseurl}}/assets/images/2018/networkurl.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/networkurl.jpg =200)
 
     * http发展
 
-      ![]({{site.baseurl}}/assets/images/2018/http1.jpg)
-      ![]({{site.baseurl}}/assets/images/2018/http2.jpg)
+      ![]({{site.baseurl}}/assets/images/2018/http1.jpg =200)
+      ![]({{site.baseurl}}/assets/images/2018/http2.jpg =200)
 
     * 域名解析
 
