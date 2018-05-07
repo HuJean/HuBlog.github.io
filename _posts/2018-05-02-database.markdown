@@ -85,6 +85,6 @@ FROM --> JOIN --> ON -->AND-->　LEFT--> WHERE -->SELECT
 尽量避免子查询，而用join.
 ~~~
   * 手写SQL语句。
-  ![]({{site.baseurl}}/assets/images/2018/database10.jpg){:width="500"}
-  ![]({{site.baseurl}}/assets/images/2018/database11.jpg){:width="500"}
+    * ![]({{site.baseurl}}/assets/images/2018/database10.jpg){:width="500"}
+    * ![]({{site.baseurl}}/assets/images/2018/database11.jpg){:width="500"}
 ---
