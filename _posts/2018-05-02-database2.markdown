@@ -1,0 +1,28 @@
+---
+layout: post
+title: 数据库笔记（重点）
+date: '2018-05-02 19:52:00'
+categories: [计算机基础]
+tags: [Database]
+---
+
+# 索引
+    ![]({{site.baseurl}}/assets/images/2018/database1.jpg){:width="500"}
+    ![]({{site.baseurl}}/assets/images/2018/database2.jpg){:width="500"}
+    ![]({{site.baseurl}}/assets/images/2018/database3.jpg){:width="500"}
+
+# 查询优化
+    ![]({{site.baseurl}}/assets/images/2018/database4.jpg){:width="500"}
+
+# SQL优化
+    ![]({{site.baseurl}}/assets/images/2018/database5.jpg){:width="500"}
+    ![]({{site.baseurl}}/assets/images/2018/database6.jpg){:width="500"}
+
+# 存储引擎
+    ![]({{site.baseurl}}/assets/images/2018/database7.jpg){:width="500"}
+
+# 隔离级别
+    ![]({{site.baseurl}}/assets/images/2018/database8.jpg){:width="500"}
+
+# 问题总结
+    ![]({{site.baseurl}}/assets/images/2018/database9.jpg){:width="500"}
