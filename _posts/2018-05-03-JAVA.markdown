@@ -23,17 +23,24 @@ tags: [JAVA]
   * Interface：完全抽象的类，没有提供任何具体实现
     * 所有方法自动被声明为public
     * 所有变量自动被声明为public static final
-⎫   Implements接口的非抽象类必须实现接口的所有方法
-⎫   不能被实例化，可同时实现多个接口
-2.  Static与final
-a)  Static
-⎫   变量：全局变量，当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个static变量；在类装载时，分配一块存储空间，所有此类的对象都可操作此块存储空间；
-⎫   方法：ClassName.functionName，只能调用static方法和static变量；
-⎫   类：只能修饰内部类；
-⎫   代码块：JVM加载时，按照在类中出现的先后顺序依次执行。
-b)  Final
-⎫   变量：表示常量，不能被修改；可以先声明，在运行时初始化；
-⎫   方法：不允许子类覆盖该方法；
-⎫   类：不能被继承。
-c)  static final：全局常量、全局方法。
+    * Implements接口的非抽象类必须实现接口的所有方法
+    * 不能被实例化，可同时实现多个接口
+
+# Static与final
+  * Static
+    * 变量：全局变量，当声明一个对象时，并不产生static变量的拷贝，而是该类所有的实例变量共用同一个static变量；在类装载时，分配一块存储空间，所有此类的对象都可操作此块存储空间；
+    * 方法：ClassName.functionName，只能调用static方法和static变量；
+    * 类：只能修饰内部类；
+    * 代码块：JVM加载时，按照在类中出现的先后顺序依次执行。
+  * Final
+    * 变量：表示常量，不能被修改；可以先声明，在运行时初始化；
+    * 方法：不允许子类覆盖该方法；
+    * 类：不能被继承。
+  * static final：全局常量、全局方法。
+
+# 访问修饰符
+
+  ![]({{site.baseurl}}/assets/images/2018/java1.png){:width="500"}
+
+
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 数据库笔记（重点）
+title: 数据库笔记
 date: '2018-05-02 19:52:00'
 categories: [计算机基础]
 tags: [Database]
