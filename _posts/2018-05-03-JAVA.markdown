@@ -81,6 +81,7 @@ tags: [JAVA]
 
 # 内存管理
     ![]({{site.baseurl}}/assets/images/2018/java3.png){:width="500"}
+    
   * 程序计数器：当前线程所执行的字节码的行号指示器。
   * 栈
     * 本地方法栈：线程在调用本地方法时，来存储本地方法的局部变量表，本地方法的操作数栈等等信息。
@@ -94,9 +95,11 @@ tags: [JAVA]
     * 运行时常量池：虚拟机加载Class后把常量池中的数据放入到运行时常量池。。
   * 对象访问　Object obj = new Object()
     * 句柄访问方式：Java堆中将会划分出一块内存来作为句柄池，reference中存储的就是对象的句柄地址，而句柄中包含了对象实例数据和类型数据各自的具体地址信息。对象被移动时只需要改变句柄的实例数据指针。
+
     ![]({{site.baseurl}}/assets/images/2018/java4.png){:width="500"}
 
     * 直接指针访问方式：Java 堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，reference中直接存储的就是对象地址。访问时速度更快，节省了一次指针定位的开销。
+
     ![]({{site.baseurl}}/assets/images/2018/java5.png){:width="500"}
 
 # 垃圾回收（Garbage Collection，GC）
@@ -107,6 +110,7 @@ tags: [JAVA]
     * 标记-整理：采用标记-清除算法一样的方式进行对象的标记，但在清除时不同，在回收不存活的对象占用的空间后，会将所有的存活对象往左端空闲空间移动，并更新对应的指针。成本较高，解决内存碎片问题。
     * Copying：把堆分成一个对象面和多个空闲面， 程序从对象面为对象分配空间，当对象满了，垃圾收集就从根集中扫描活动对象，并将每个活动对象复制到空闲面，这样空闲面变成了对象面，原来的对象面变成了空闲面，程序会在新的对象面中分配内存。
     * Generation：分代的垃圾回收策略，是基于这样一个事实：不同的对象的生命周期是不一样的。新生代（新生成的对象）、年老代（在年轻代中经历了N次垃圾回收后仍然存活的对象）、持久代（存放静态文件）。
+
     ![]({{site.baseurl}}/assets/images/2018/java6.png){:width="500"}
 
   * 垃圾收集器
@@ -130,6 +134,7 @@ tags: [JAVA]
     * try－catch-finally语句
     * throws抛出异常
     * throw抛出异常
+
     ![]({{site.baseurl}}/assets/images/2018/java7.png){:width="500"}
 
 # 集合类
@@ -156,18 +161,28 @@ tags: [JAVA]
     * 调用join()和sleep()方法，sleep()时间结束或被打断，join()中断,IO完成都会回到Runnable状态，等待JVM的调度。
     * 调用wait()，使该线程处于等待池(wait blocked pool)，直到notify()/notifyAll()，线程被唤醒被放到锁定池(lock blocked pool )，释放同步锁使线程回到可运行状态（Runnable）
     * 对Running状态的线程加同步锁(Synchronized)使其进入(lock blocked pool ),同步锁被释放进入可运行状态(Runnable)。
+
     ![]({{site.baseurl}}/assets/images/2018/java8.png){:width="500"}
+
   * 同步工具
     * Monitor：Java中的每个对象都有一个监视器，来监测并发代码的重入。在非多线程编码时该监视器不发挥作用，反之如果在synchronized 范围内，监视器发挥作用。
+
     ![]({{site.baseurl}}/assets/images/2018/java9.png){:width="500"}
+
     * synchronized单独使用
       * 代码块：获取了lock实例的monitor
+
       ![]({{site.baseurl}}/assets/images/2018/java10.png){:width="500"}
+
       * 方法：获取的是Thread1类的monitor
+
       ![]({{site.baseurl}}/assets/images/2018/java11.png){:width="500"}
+
     * synchronized, wait, notify结合
+
     ![]({{site.baseurl}}/assets/images/2018/java12.png){:width="300"}
     ![]({{site.baseurl}}/assets/images/2018/java13.png){:width="300"}
+
     * volatile：多线程的内存模型：main memory（主存）、working memory（线程栈），在处理数据时，线程会把值从主存load到本地栈，完成操作后再save回去(volatile关键词的作用：每次针对该变量的操作都激发一次load and save)。
   * 基本线程类
     * Thread类
@@ -199,8 +214,10 @@ tags: [JAVA]
       * Condition：一个实例的内部实际上维护了一个队列，队列中的节点表示由于（某些条件不满足而）线程自身调用await方法阻塞的线程。
         * Await：入列到条件队列，释放锁，阻塞自身线程；被唤醒后尝试获取锁（此时线程位于等待队列），成功获取则从await中返回并执行线程后面的代码；否则，继续阻塞等待；
         * Signal：将条件队列的队首节点取出，放入等待锁队列的队尾，唤醒该节点对应的线程；
+
         ![]({{site.baseurl}}/assets/images/2018/java14.png){:width="300"}
         ![]({{site.baseurl}}/assets/images/2018/java15.png){:width="300"}
+
         ![]({{site.baseurl}}/assets/images/2018/java16.png){:width="300"}
         ![]({{site.baseurl}}/assets/images/2018/java17.png){:width="300"}
     * 容器类
@@ -209,11 +226,8 @@ tags: [JAVA]
     * 管理类
       * ThreadPoolExecutor
       * ScheduledThreadPoolExecutor
+
       ![]({{site.baseurl}}/assets/images/2018/java18.png){:width="500"}
-
-
-
-
 
 # SSH框架
   * Struts作为系统的整体基础架构，负责MVC的分离，在Struts框架的模型部分，控制业务跳转，利用Hibernate框架对持久层提供支持。Spring一方面作为一个轻量级的IoC容器，负责查找、定位、创建和管理对象及对象之间的依赖关系，另一方面能使Struts和Hibernate更好地工作。
@@ -223,3 +237,4 @@ tags: [JAVA]
       * 面向切面：多个逻辑过程中相同的操作抽离出来，例如日志管理
     * Hibernate：对JDBC进行了非常轻量级的对象封装，大大简化了数据访问层繁琐的重复性代码。简化DAO层的编码工作，将软件开发人员从大量相同的数据持久层相关编程工作中解放出来，使开发更对象化了。移植性好，支持各种数据库，如果换个数据库只要在配置文件中变换配置就可以了，不用改变hibernate代码。支持透明持久化，因为hibernate操作的是纯粹的（pojo）java类，没有实现任何接口，没有侵入性。
 
+---
