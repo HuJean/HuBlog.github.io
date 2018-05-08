@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JAVA基础
-date: '2018-05-03 19:52:00'
+date: '2018-05-04 19:52:00'
 categories: [计算机基础]
 tags: [JAVA]
 ---
@@ -81,7 +81,8 @@ tags: [JAVA]
 
 # 内存管理
   * 总体概况
-    ![]({{site.baseurl}}/assets/images/2018/java3.png){:width="500"}
+
+  ![]({{site.baseurl}}/assets/images/2018/java3.png){:width="500"}
 
   * 程序计数器：当前线程所执行的字节码的行号指示器。
   * 栈
