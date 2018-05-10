@@ -68,7 +68,6 @@ tags: [React]
   * ReactElement
   * ReactComponent
   * ReactClass
-  * 
 
 
 

@@ -1,0 +1,27 @@
+---
+layout: post
+title: Vue实例学习
+date: '2018-05-10 07:00:00'
+categories: [Framework]
+tags: [Vue]
+---
+
+# 脚手架工具
+  * npm i -g vue-cli
+  * vue init webpack vue-tutorial
+  * cd vue-tutorial
+  * npm install
+  * npm run dev
+
+# 代码结构
+  * main.js: 入口文件
+  * App.vue: 初始化组件
+  * assets: 资源文件夹，包含图片、字体以及样式等
+  * components: 组件资源
+  * store: vuex的相关内容，主要包括actions、mutations以及注册文件index
+
+# vuex部分
+  * mutation-types.js: 定义事件类型，记录所有的事件名
+  * mutation.js: 每个事件的具体操作，注册各种数据变化的方法
+  * action.js: 触发事件，传入参数；commit
+  * index.js: vuex构建
