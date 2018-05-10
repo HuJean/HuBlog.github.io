@@ -2,7 +2,7 @@
 layout: post
 title: HTTP基础
 date: '2017-05-22 07:00:00'
-categories: [网络]
+categories: [计算机基础]
 tags: [HTTP]
 ---
 

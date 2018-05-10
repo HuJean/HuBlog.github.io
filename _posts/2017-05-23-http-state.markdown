@@ -2,7 +2,7 @@
 layout: post
 title: HTTP状态码
 date: '2017-05-23 07:00:00'
-categories: [网络]
+categories: [计算机基础]
 tags: [HTTP, State]
 ---
 
