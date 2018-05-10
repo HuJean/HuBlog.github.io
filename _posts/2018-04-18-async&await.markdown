@@ -2,7 +2,7 @@
 layout: post
 title: JavaScript中的async和await
 date: '2018-04-18 14:14:00'
-categories: [JS新特性]
+categories: [JS]
 tags: [ES7]
 ---
 

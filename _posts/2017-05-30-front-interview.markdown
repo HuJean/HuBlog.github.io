@@ -2,7 +2,7 @@
 layout: post
 title: 前端面试
 date: '2017-05-30 07:00:00'
-categories: [Front-end]
+categories: [面试]
 tags: [Interview]
 ---
 
