@@ -26,8 +26,12 @@ tags: [htmltopdf]
   * 生成pdf需要把转化的元素添加到jsPDF实例中，也有添加html的功能，但某些元素无法生成在pdf中，因此可以使用html2canvas + jsPDF的方式将页面转成pdf。
   * 通过html2canvas将遍历页面元素，并渲染生成canvas，然后将canvas图片格式添加到jsPDF实例，生成pdf。
 
+# 后端转pdf
+  * Java: IText，
+  * PHP: FPDF，DomPDF等。
 
 # 来源
   * https://github.com/linwalker/render-html-to-pdf
+  * https://www.cnblogs.com/java-class/p/5233243.html
+  * https://blog.csdn.net/fanblog/article/details/52712489
 
-  
