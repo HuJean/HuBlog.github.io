@@ -1,0 +1,268 @@
+---
+layout: post
+title: 移动端适配大坑
+date: '2018-07-28 07:00:00'
+categories: [前端实战]
+tags: [mobile]
+---
+入职培训完成后，邱晨哥给我安排了中M首页适配的任务，一共是5天半的工作量。虽然之前有过云课堂的前端实习经历，但是也基本忘记得差不多了，需要从头熟悉一遍，所以开始时我也是非常焦虑的，周六也来公司进行了代码阅读与整理，大致理清楚了下周的任务。在接下来的一周我大约花了三天半的时间就完成了全部代码的开发。然鹅，这一周真机测试，让我明白了移动端开发的坑爹之处！
+
+# 整体布局
+  * 移动端的整体布局一般来说可以分为上中下三个部分，分别为header、mainfooter，其中header和footer是固定高度，分别固定在页面顶部和页面底部，而main是页面展示主体内容的部分，并且可以滚动。
+  * 要实现这种布局，有以下几种办法
+    * 最容易想到的就是header和footer为fixed，body最小高度为一屏，超出则滚动。这种布局有个优点，在ios的safari上页面的地址栏会随着 body 的滚动隐藏起来，缺点就是fixed在有input的页面会有各种兼容性问题；
+    * 采取内滑的策略。具体的实现方式可能略有不同，但思路都是在元素内部滚动，而不是body。比如可以设置header和footer为absolute，main也为absolute，并且overflow-y为auto
+    * 用弹性布局的方式。我还没有尝试过，但据说这是移动端布局的大趋势。
+
+# rem实现自适应布局
+  * 感觉这一直是一个很难搞的问题，数不清楚，所以直接上代码！
+  * 最终效果：两列自适应排列
+  
+  ![Front-end]({{site.baseurl}}/assets/images/2018/rem.png)
+
+  * html
+
+  ~~~
+  //首先设置viewport
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+  //页面结构
+  <body>
+    <div class="m-head-container">
+        头部
+    </div>
+    <div class="m-main-container f-cb">
+        <div class="main_div f-fl">div1</div>
+        <div class="main_div f-fl">div2</div>
+        <div class="main_div f-fl">div3</div>
+        <div class="main_div f-fl">div4</div>
+    </div>
+    <div class="m-foot-container">
+        底部
+    </div>
+  </body>
+  ~~~
+
+  * scss
+
+  ~~~
+  // rem的基准字体
+  $rem-base-font-size: 75px;  
+  // 设计图的分辨率宽度
+  $UI-width: 750px;
+  // 需要适配的屏幕宽度
+  $device-widths: 240px, 320px, 360px, 375px, 384px, 411px, 414px, 424px, 480px, 540px, 640px, 720px, 750px, 768px, 800px, 980px, 1024px, 1080px, 1152px, 1366px, 1440px, 2160px;
+  //根据不同设备的屏幕宽度，定义<html>的基准font-size
+  @each $current-width in $device-widths {
+    @media (min-width: $current-width) {
+      html {
+        font-size: $current-width * $rem-base-font-size/$UI-width;
+      }
+    }
+  }
+  @function px2rem($pxval) {
+    @return ($pxval / $rem-base-font-size) * 1rem;
+  }
+  .m-head-container, .m-main-container, .m-foot-container{
+    border: red solid 1px;
+    font-size: px2rem(50px);
+  }
+  .m-head-container{
+    height: px2rem(100px);
+  }
+  .m-main-container{
+    .main_div{
+        background: blue;
+        width: px2rem(300px);
+        height: px2rem(200px);
+        margin-right: px2rem(45px);
+        margin-bottom: px2rem(45px);
+        &:nth-child(2n+1){
+            margin-left: px2rem(45px);
+        }
+    }
+  }
+  .m-foot-container{
+    height: px2rem(100px);
+  }
+  .f-cb:after{
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    content: '.';
+  }
+  .f-cb{
+    zoom: 1;
+  }
+  .f-fl {
+    float: left;
+  }
+  ~~~
+  
+
+# hover效果
+  * 主要实现点击头像显示用户信息的小窗口；
+  * 用hover来实现窗口的隐藏与显示，纯css控制；
+  * 开始测试时是没有问题的，但是在微信浏览器里面似乎就失效了；
+  * 问过大佬之后，大佬建议移动端最好不要用hover来实现浮窗；
+  * 具体实现
+    * 页面结构
+
+    ~~~
+    <div id="j-nav-user">
+        <div id="j-nav-user-face">
+            <img id="j-nav-user-img" alt="用户头像" src="">
+        </div>
+        <div id="j-nav-user-info"></div>
+    </div>
+    ~~~
+
+    * body绑定touchstart事件
+
+    ~~~
+    document.body.addEventListener(
+        'touchstart',
+        _handleNavUser,
+        false
+    );
+    ~~~
+
+
+    * 抛出自定义事件
+
+    ~~~
+    _handleNavUser: function(e) {
+        if (!!e && !!e.targetTouches && e.targetTouches.length > 0) {
+            //获取当前元素id
+            var _target = e.targetTouches[0].target;
+            var _targetId = (!!_target && _target.id) || '';
+            var _hide = true;
+            //根据父元素判断是否处于j-nav-user层
+            var _t = _target;
+            while (_t) {
+                var _tid = _t.id;
+                if (_tid == 'j-nav-user') {
+                    _hide = false;
+                    break;
+                }
+                _t = _t.parentNode;
+            }
+            //抛出自定义事件
+            var evt = new CustomEvent('NavUser', {
+                detail: {
+                targetId: _targetId,
+                hide: _hide,
+                }
+            });
+            var cb = document.getElementById("j-nav-user");
+            cb.dispatchEvent(evt);
+        }
+    }
+    ~~~
+
+    * 头像模块绑定自定义事件
+
+    ~~~
+    document.getElementById("j-nav-user").addEventListener(
+        'NavUser',
+        _handleShowUser,
+        false
+    );
+    ~~~
+
+    * 改变用户信息的显示
+
+    ~~~
+    _handleShowUser: function(e) {
+        if (!!e && !!e.detail) {
+            if (
+                e.detail.targetId == 'j-nav-user-img' ||
+                e.detail.targetId == 'j-nav-user') {
+                //点击头像区域根据当前状态取犯
+                this.data.showuserinfo = !this.data.showuserinfo;
+            } else {
+                if (e.detail.hide) {
+                    //点击其他区域则直接隐藏该区域
+                    this.data.showuserinfo = false;
+                }
+            }
+        }
+    }
+    ~~~
+
+    * 注意：touch对应的event在安卓和IOS上存在差异，开始的时候用e.path，发现iphone上不存在这一属性，所以选择直接遍历树形结构。
+
+# 移动端click事件300ms延迟
+  * 移动浏览器提供一个特殊的功能：双击（double tap）放大，用户碰触页面之后，需要等待一段时间来判断是不是双击（double tap）动作，而不是立即响应单击（click），等待的这段时间大约是300ms。
+    * 使用fastclick插件，会消除所有click事件的延迟，但是一般都不推荐使用插件来解决这个问题
+    * 不用click事件，用移动设备提供的原生touch事件，或某些移动端手势库提供的tap事件。移动端touch事件提供了 touchstart 、 touchmove 、 touchend等，对于简单的页面，可以把 touchstart 或者 touchend 当作tap来用，这样可以解决300ms延迟问题，但并不完美，比如手指接触目标元素，按住不放，慢慢移出响应区域，依然会触touchstart事件对应的事件处理器（本不应该触发），touchend也有类似的问题
+    * 如果想模拟原生App的点击事件，需要自己封装一套tap事件，或者使用手势库的tap事件，tap事件原理也非常简单，是由touchstart和touchend组合而成，首先要判断touchend和touchstart的偏移距离，然后阻止掉touchend事件300ms之后触发的click事件，并且始终以touchend事件作为触发的必要条件
+
+# 点击穿透
+  * 如果某个返回按钮的位置，恰好在要返回的这个页面的带有href属性的a标签的范围内，在点击返回按钮后，页面快速切换到有a标签的页面，300ms后触发了click事件，从而触发了a标签的意外跳转，这个就是典型的点击穿透问题。
+  * 罪魁祸首其实就是a标签跳转默认是click事件触发，而移动端的touch事件触发之后，依然会在300ms后触发click事件。解决办法其实在上面一条已经提到了。
+
+# 一些小细节
+  * ios和android下触摸元素时出现半透明灰色遮罩：-webkit-tap-highlight-color:rgba(255,255,255,0)
+  * IOS滚动不流畅：-webkit-overflow-scrolling: touch，缺点就是移动端浏览器中input框的光标闪烁问题；原因是加了-webkit-overflow-scrolling: touch，导致滑动速度太快来不及重绘，解决方法是在你滑动页面的时候直接让input失去焦点，隐藏光标；
+  * chrome56+，默认touchstart为passive true，不能调用preventDefault()来阻止click事
+  * 移动端 1px border 实现
+
+    ~~~
+    block {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        position: relative;
+        /*border: 1px solid red;*/
+    }
+    .block:before {
+        content: '';
+        position: absolute;
+        transform-origin: 0 0;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        border: 1px solid red;
+        transform: scale(.5);
+    }
+    ~~~
+
+  * 微信下拉卡住的问题
+    * height: auto;自动默认高度，微信有的时候会把这个认为是一屏高度，就会出现卡住的现象；
+    * height：100%的话，如果你父级有height的话就是父级的高度
+  * 屏幕翻转
+    * 在手机翻转时，重新计算尺寸
+    * 竖着转横着，先保持横向尺寸不变，计算纵向尺寸，再根据比例调整横向
+    * 横着转竖着，先保持竖向尺寸不变，计算横向尺寸，再根据比例调整纵向
+    * 有兴趣可以尝试以下，会遇到各种意想不到的bug！
+  * div内的span文字垂直居中
+    * line-height实现居中，在手机上有兼容问题
+
+    ~~~
+    div {
+        width: px2rem(125px);
+        height: px2rem(40px);
+        text-align: center;
+        font-size: 0;
+        span {
+            vertical-align: middle;
+            display: inline-block;
+            font-size: px2rem(24px);
+            color: #55b929;
+        }
+        &:after {
+            content: '';
+            width: 0;
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+    ~~~
+  
+
+  
+
