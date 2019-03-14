@@ -25,7 +25,7 @@ tags: [Framework]
       * onlanch
       * onshow
       * onhide
-    *页面（Page）
+    * 页面（Page）
       * onload
       * onshow
       * onready
