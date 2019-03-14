@@ -1,0 +1,45 @@
+---
+layout: post
+title: 由打包问题熟悉项目工程化流程
+date: '2019-03-14 18:00:00'
+categories: [Front-end]
+tags: [Framework]
+---
+NEJ打包工具遇到了比较多的坑，这个过程虽然比较痛苦，但是解决问题的过程还是让我熟悉了工程从打包构建到部署上线的整个流程。
+
+# NEJ模块系统
+  * UMI系统
+    * /tp/crumbs/moudleA
+    * /tp/crumbs/moudleB
+    * /tp/moudleC
+    * 初始化时，绑定对应的html文件（内部为模板文件）
+  * 调度器Dispatcher
+    * hash值改变之后，触发hashchange事件
+    * 解析umi，找到两次umi的公共父节点
+    * 获取公共父节点之后的umi对应的节点
+    * 加载变化模块，构成body
+    * 挂在到公共父节点对应的模块下面
+
+# NEJ打包工具
+  * 以ftl为入口，直接引入css文件
+  * 遇到script标签，则打包js文件（AMD，define定义依赖的js文件）
+  * 提取公共js，打包到core.js
+  * 分析依赖，打包js文件
+
+# 工程架构
+  * 静态资源服务器
+    * js、css、html
+    * 缓存优化
+    * 内容CDN
+  * 主域名服务器
+    * ftl文件及接口相关
+    * 静态资源请求，则重定向到静态资源服务器
+
+# 静态资源
+  * 缓存
+    * 客户端换粗：cache-control，强制缓存；304，对比缓存
+    * 服务端缓存：vanish、nginx
+  * 版本控制
+    * index.html?{hash}
+    * index_{hash}.html
+  
