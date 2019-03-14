@@ -1,0 +1,41 @@
+---
+layout: post
+title: 小程序基本认识
+date: '2019-03-14 19:00:00'
+categories: [Front-end]
+tags: [Framework]
+---
+在项目开发初期，完全利用web-view组件内嵌h5页面，主要是为了之后可以移植到支付等小程序内部。但是，随着交互复杂度的提升，个人感觉到了这种方法在用户体验、性能优化等方面存在很多问题，开始尝试用wepy和wepy-redux进行原生小程序的开发，可以明显感受到原生的一些优势。
+
+# 微信小程序
+  * 运行过程
+    * 包下载
+      * 顶部有。。。
+      * h5更优，原生代码包较小
+    * 业务代码注入和渲染
+      * h5页面上方的进度条有些恶心
+      * h5白屏时间更长
+    * 异步数据请求
+  * 底层机制
+    * 渲染Webview：可以有多个
+    * 逻辑WebView：全局只有一个
+    * setData：两个webView通过调用原生的JSBridge通讯，有性能问题
+  * 生命周期
+    * 小程序（App）
+      * onlanch
+      * onshow
+      * onhide
+    *页面（Page）
+      * onload
+      * onshow
+      * onready
+      * onhide
+      * onunload
+  * 细节优化
+    * webview预加载，加快页面切换速度
+    * 原生组件，在安装微信时就存在，可以直接使用
+    * 禁止动态解析script脚本（xss攻击）
+    * wx.login获取token，进行服务端验证（csrf攻击）
+    * 不存在a标签（csrf攻击）
+    * 不可以修改Dom结构，虚拟DOM
+
