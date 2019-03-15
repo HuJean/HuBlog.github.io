@@ -41,15 +41,15 @@ tags: [基础]
   * 频发触发的事件，总会设置一个固定的时间延迟
   * 每次触发时，会清空上一次的计时器，重新计时
   ~~~
-  function debounce(func){
-    var timer = null;
-    return function(){
-      !!timer && clearTimeout(timer);
-      var context = this;
-      var args = arguments;
-      timer = setTimeout(function(){
-        func.apply(context,args);
-      },1000);
+    function debounce(func){
+      var timer = null;
+      return function(){
+        !!timer && clearTimeout(timer);
+        var context = this;
+        var args = arguments;
+        timer = setTimeout(function(){
+          func.apply(context,args);
+        },1000);
+      }
     }
-  }
   ~~~
