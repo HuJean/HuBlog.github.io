@@ -1,56 +1,48 @@
 ---
 layout: post
-title: 函数节流和防抖动
-date: '2019-03-15 14:00:00'
+title: JS基础之事件循环
+date: '2019-03-15 14:30:00'
 categories: [JS]
 tags: [基础]
 ---
-在之前的校招面试中，一直觉得这两个函数优化简直难以理解。之后，在实际工程中运用起来之后，才做到真正的理解。
+最近的面试中，频频根据事件循环设置的输入输出题目！emmm……是时候好好整理一下自己的认识了。
 
-# 实际应用
-  * 搜索联想
-  * 懒加载，滚动事件的触发
+# 浏览器
+  * 多进程，一般一个tab对应一个进程，不同浏览器会做一定的优化处理
+  * Browser进程，打开浏览器就会切仅有一个的，管理整个浏览器
+  * GPU进程，也是只有一个，用于3D绘制
 
-# 节流
-  * 在固定的时间周期内，只会执行一次
-  * 每次触发时，会根据时间间隔判断是否要立即执行
-    ~~~
-    function throttle(func,delay){
-      var timer = null, start = null;
-      retun function(){
-        var context = this;
-        var args = arguments;
-        var now = new Date();
-        if(!start){
-          start = now;
-        }
-        //这一步很重要，总是会漏掉
-        !!timer && clearTimeout(timer);
-        if(now-start>delay){
-          func.apply(context,args)
-        }else{
-          timer = setTimeout(function(){
-            func.apply(context,args);
-          },delay);
-        }
-      }
-    }
-    ~~~
+# 浏览器内核
+  * 单线程机制
+    * JS引擎线程和GUI渲染线程互斥
+  * JS执行顺序
+    * 同步任务，直接进执行栈
+    * 异步任务
+      * 宏任务：计时器、异步回调
+      * 微任务：promise、observer
+      * async&wait：当前执行栈为空之后
 
-# 防抖动
-  * 频发触发的事件，总会设置一个固定的时间延迟
-  * 每次触发时，会清空上一次的计时器，重新计时
-
+# 经典案例
+  * 输入输出
   ~~~
-  function debounce(func){
-    var timer = null;
-    return function(){
-      !!timer && clearTimeout(timer);
-      var context = this;
-      var args = arguments;
-      timer = setTimeout(function(){
-        func.apply(context,args);
-      },1000);
-    }
+  async function async1() {
+    console.log( 'async1 start' )
+    await async2()
+    console.log( 'async1 end' )
   }
+  async function async2() {
+    console.log( 'async2' )
+  }
+  console.log( 'script start' )
+  setTimeout( function () {
+    console.log( 'setTimeout' )
+  }, 0 )
+  async1();
+  new Promise( function ( resolve ) {
+    console.log( 'promise1' )
+    resolve();
+  } ).then( function () {
+    console.log( 'promise2' )
+  } )
+  console.log( 'script end' )
   ~~~
