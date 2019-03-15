@@ -1,0 +1,52 @@
+---
+layout: post
+title: 函数节流和防抖动
+date: '2019-03-15 14:00:00'
+categories: [JS]
+tags: [基础]
+---
+在之前的校招面试中，一直觉得这两个函数优化简直难以理解。之后，在实际工程中运用起来之后，才做到真正的理解。
+
+# 节流
+  * 在固定的时间周期内，只会执行一次
+  * 每次触发时，会根据时间间隔判断是否要立即执行
+    ~~~
+    function throttle(func,delay){
+      var timer = null, start = null;
+      retun function(){
+        var context = this;
+        var args = arguments;
+        var now = new Date();
+        if(!start){
+          start = now;
+        }
+        //这一步很重要，总是会漏掉
+        !!timer && clearTimeout(timer);
+        if(now-start>delay){
+          func.apply(context,args)
+        }else{
+          timer = setTimeout(function(){
+            func.apply(context,args);
+          },delay);
+        }
+      }
+    }
+    ~~~
+
+# 防抖动
+  * 频发触发的事件，总会设置一个固定的时间延迟
+  * 每次触发时，会清空上一次的计时器，重新计时
+
+  ~~~
+  function debounce(func){
+    var timer = null;
+    return function(){
+      !!timer && clearTimeout(timer);
+      var context = this;
+      var args = arguments;
+      timer = setTimeout(function(){
+        func.apply(context,args);
+      },1000);
+    }
+  }
+  ~~~
