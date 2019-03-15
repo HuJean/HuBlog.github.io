@@ -10,53 +10,51 @@ tags: [性能优化]
 # 基本的懒加载
   * 基于滚动事件
     * html
-    ~~~
-    <div class="container" id="j-container">
+      ~~~
+      <div class="container" id="j-container">
         <img class='j-img' src="" data-original='http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'/>
-        <img class='j-img' src="" data-original='http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'/>
-        。。。 
-    </div>   
-    ~~~
+        <img class='j-img' src="" data-original='http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'/> 
+      </div>   
+      ~~~
     * JS
-    ~~~
-    var imgList = Array.from(document.querySelectorAll('.j-img'));
-    var container = document.getElementById('j-container');
-    showImg();
-    container.addEventListener('scroll',showImg);
-    function showImg(){
-        var len = imgList.length;
-        for(var i=len-1;i>=0;i--){
-          if(imgList[i].offsetTop<container.clientHeight+container.scrollTop){
-            imgList[i].src = imgList[i].dataset['original'];
-            imgList.splice(i,1);
+      ~~~
+      var imgList = Array.from(document.querySelectorAll('.j-img'));
+      var container = document.getElementById('j-container');
+      showImg();
+      container.addEventListener('scroll',showImg);
+      function showImg(){
+          var len = imgList.length;
+          for(var i=len-1;i>=0;i--){
+            if(imgList[i].offsetTop<container.clientHeight+container.scrollTop){
+              imgList[i].src = imgList[i].dataset['original'];
+              imgList.splice(i,1);
+            }
           }
-        }
-    }
-    ~~~
-
+      }
+      ~~~
   * 引入函数节流
-  ~~~
-  function throttle(func,delay){
-    var start = null;
-    return function(){
-      var context = this;
-      var args = [].slice.call(arguments);
-      var now = new Date().getTime();
-      if(!start){
-        start = now;
-      }
-      if(now-start>delay){
-        func.apply(this,args);
-        start = now;
-      }else{
-        timer = setTimeout(function(){
+    ~~~
+    function throttle(func,delay){
+      var start = null;
+      return function(){
+        var context = this;
+        var args = [].slice.call(arguments);
+        var now = new Date().getTime();
+        if(!start){
+          start = now;
+        }
+        if(now-start>delay){
           func.apply(this,args);
-        },delay-(now-start));
+          start = now;
+        }else{
+          timer = setTimeout(function(){
+            func.apply(this,args);
+          },delay-(now-start));
+        }
       }
     }
-  }
-  container.addEventListener('scroll',throttle(showImg,400));
-  ~~~
+    container.addEventListener('scroll',throttle(showImg,400));
+    ~~~
 
 # 长列表优化
   * dom节点过多，移动端卡顿明显
