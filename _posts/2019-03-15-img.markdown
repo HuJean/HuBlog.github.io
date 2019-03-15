@@ -1,0 +1,128 @@
+---
+layout: post
+title: 图片懒加载
+date: '2019-03-15 15:00:00'
+categories: [JS]
+tags: [性能优化]
+---
+在移动端开发中，图片懒加载是一个必须的优化过程。随着理解的深入，会有各种细节需要进一步优化。
+
+# 基本的懒加载
+  * 基于滚动事件
+    * html
+    ~~~
+    <div class="container" id="j-container">
+        <img class='j-img' src="" data-original='http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'/>
+        <img class='j-img' src="" data-original='http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg'/>
+        。。。 
+    </div>   
+    ~~~
+    * JS
+    ~~~
+    var imgList = Array.from(document.querySelectorAll('.j-img'));
+    var container = document.getElementById('j-container');
+    showImg();
+    container.addEventListener('scroll',showImg);
+    function showImg(){
+        var len = imgList.length;
+        for(var i=len-1;i>=0;i--){
+          if(imgList[i].offsetTop<container.clientHeight+container.scrollTop){
+            imgList[i].src = imgList[i].dataset['original'];
+            imgList.splice(i,1);
+          }
+        }
+    }
+    ~~~
+
+  * 引入函数节流
+  ~~~
+  function throttle(func,delay){
+    var start = null;
+    return function(){
+      var context = this;
+      var args = [].slice.call(arguments);
+      var now = new Date().getTime();
+      if(!start){
+        start = now;
+      }
+      if(now-start>delay){
+        func.apply(this,args);
+        start = now;
+      }else{
+        timer = setTimeout(function(){
+          func.apply(this,args);
+        },delay-(now-start));
+      }
+    }
+  }
+  container.addEventListener('scroll',throttle(showImg,400));
+  ~~~
+
+# 长列表优化
+  * dom节点过多，移动端卡顿明显
+  * 分页加载，控制DOM数量
+    * html
+      ~~~
+      <div class="list-view" id="j-list-view">
+        <div class="list-view-container" id="j-list-container">
+          <!-- 撑起高度，有滚动条 -->
+          <div class="list-view-content" id="j-list-content">
+          <!-- 可见区域 -->
+          </div>
+        </div>
+      </div>
+      ~~~
+    * JS
+      ~~~
+      var data = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,47,48,49,50];
+      var listContainer = document.getElementById('j-list-container');
+      var listContent = document.getElementById('j-list-content');
+      listContainer.style.height = data.length*30 + 'px';
+      var start,styletop,end;
+      //当前显示数据
+      var visibleData = [];
+      var listView = document.getElementById('j-list-view');
+      listView.addEventListener('scroll',showData);
+      showData();
+      function showData(){
+        start = Math.floor(listView.scrollTop/30);
+        styletop = start*30 + 'px';
+        end = start+10;
+        visibleData = data.slice(start,end);
+        var elements = visibleData.map(function(item,index){
+          return '<div style="height:30px">'+item+'</div>'
+        });
+        listContent.style.position= "absolute";
+        listContent.style.top = styletop;
+        listContent.innerHTML=elements.reduce(function(a,b){
+          return a+b;
+        });
+      }
+      ~~~
+  * 内存中仍然有很多数据
+    * 每次都保存三屏数据，向下滚定时，加载后面的数据，服务端压力变大
+    * 待实现
+
+# IntersectionObserver
+  * scroll事件，遍历列表，性能不好
+  * 获取位置信息，导致重排
+  * 引入一种新的API，PC端兼容性不好，可在移动端尝试
+    ~~~
+    function query(selector) {
+      return Array.from(document.querySelectorAll(selector));
+    }
+    var observer = new IntersectionObserver(
+      function(changes) {
+        changes.forEach(function(change) {
+          var container = change.target;
+          var content = container.querySelector('template').content;
+          container.appendChild(content);
+          //及时关闭监听
+          observer.unobserve(container);
+        });
+      }
+    );
+    query('.lazy-loaded').forEach(function (item) {
+      observer.observe(item);
+    });
+    ~~~
